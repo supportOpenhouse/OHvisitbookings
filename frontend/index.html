@@ -45,10 +45,11 @@
 @keyframes pop{to{opacity:1;transform:scale(1)}}
 .hero-cta{margin-top:22px}
 @media (min-width:980px){.hero-cta{display:none}}
-.guarantee{display:flex;gap:12px;align-items:flex-start;margin-top:22px;background:var(--paper);border:1px solid var(--line);
-  border-left:4px solid var(--ok);border-radius:12px;padding:14px 16px;font-size:15px;box-shadow:var(--shadow);max-width:60ch}
-.guarantee b{color:var(--ink);font-weight:600}
-.guarantee svg{flex:none;margin-top:2px}
+.guarantee{margin-top:22px;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:12px;
+  padding:14px 18px;font-size:15px;box-shadow:var(--shadow);max-width:60ch}
+.guarantee b{display:block;color:var(--ink);font-weight:700;margin-bottom:6px}
+.guarantee ul{margin:0;padding-left:18px;display:grid;gap:5px;color:var(--ink-2)}
+.guarantee li::marker{color:var(--ok)}
 .proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px;max-width:560px}
 .proof div{border-top:2px solid var(--ink);padding-top:10px}
 .proof b{display:block;font-size:24px;font-weight:800;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
@@ -101,21 +102,6 @@
 .rzp{display:flex;justify-content:center;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
 
 /* ================= sections ================= */
-.honest{background:var(--paper)}
-.honest-body{margin-top:22px;display:grid;gap:16px;max-width:62ch;font-size:17px;color:var(--ink-2)}
-.honest-body .rule{height:1px;background:var(--line);margin:8px 0}
-.honest-body .big{font-size:clamp(20px,2.4vw,26px);font-weight:700;color:var(--ink);letter-spacing:-.015em;line-height:1.3}
-
-.method{background:var(--paper-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.stack{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:32px}
-.sl{display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;align-items:start}
-.sl .pc{font-weight:800;font-size:28px;letter-spacing:-.03em;line-height:1;color:var(--ink);padding-top:2px;font-variant-numeric:tabular-nums}
-.sl .bar{height:8px;border-radius:99px;background:var(--line-strong);margin-top:12px;overflow:hidden}
-.sl .bar i{display:block;height:100%;border-radius:99px;background:var(--ink)}
-.sl.s3 .bar i{background:var(--accent)}
-.sl p{margin-top:6px;color:var(--ink-2);max-width:60ch}
-.stack-note{margin-top:28px;font-weight:600;max-width:60ch;color:var(--ink)}
-
 .rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(78%,300px);gap:14px;overflow-x:auto;padding:24px var(--gutter) 6px;margin:0 calc(-1*var(--gutter));
   scroll-snap-type:x mandatory;scroll-padding-left:var(--gutter);scrollbar-width:none}
 .rail::-webkit-scrollbar{display:none}
@@ -148,27 +134,21 @@
 }
 
 .flow{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-top:32px}
-@media (min-width:800px){.flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px}}
+@media (min-width:800px){.flow{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 32px}}
 .fi{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px}
 .fi .num{width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:16px}
 .fi p{margin-top:6px;color:var(--ink-2)}
 
-.who-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:28px}
-@media (min-width:720px){.who-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.wc{border:1px solid var(--line);border-radius:var(--radius);padding:20px}
-.wc h3{font-size:18px}
-.wc p{margin-top:8px;color:var(--ink-2);font-size:15px}
-.wc .after{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:15px;font-weight:600;color:var(--ok)}
-.notfor{margin-top:22px;border:1.5px dashed var(--line-strong);border-radius:var(--radius);padding:20px}
+.notfor{margin-top:28px;border:1.5px dashed var(--line-strong);border-radius:var(--radius);padding:20px}
 .notfor h3{font-size:16px;margin-bottom:10px}
 .notfor div{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--ink-2);margin-top:8px}
 .notfor .x{color:var(--accent-ink);font-weight:700;flex:none}
 
 .vs{margin-top:28px;border:1px solid var(--line);border-radius:var(--radius-l);overflow:hidden}
 .vs-h{background:var(--paper-soft);padding:12px 20px;font-weight:700;font-size:14px;border-bottom:1px solid var(--line)}
-.vi{display:grid;grid-template-columns:24px minmax(0,1fr);gap:14px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.vi{display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line)}
 .vi:last-child{border-bottom:0}
-.vi b{font-weight:700}
+.vi b{font-weight:600}
 .vi p{margin-top:4px;color:var(--ink-2);font-size:15px}
 .vs-f{padding:18px 20px;background:var(--ink);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .vs-f .pp{display:flex;align-items:baseline;gap:10px}
@@ -176,18 +156,8 @@
 .vs-f .n{font-weight:800;font-size:28px;letter-spacing:-.03em}
 .vs-f small{color:#C9CDD4;font-size:13px}
 
-.promise{background:var(--paper-warm);border:1px solid var(--line);border-radius:var(--radius-l);padding:28px 22px}
-@media (min-width:720px){.promise{padding:44px 48px}}
-.promise p{margin-top:12px;color:var(--ink-2);max-width:62ch}
-.promise .two-g{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:24px}
-@media (min-width:720px){.promise .two-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.promise .g{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
-.promise .g h3{font-size:17px;display:flex;align-items:center;gap:10px}
-.promise .g p{font-size:15px;margin-top:8px}
-.promise ul{margin:22px 0 0;padding-left:20px;color:var(--ink-2);display:grid;gap:6px}
-
 .quotes{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:32px}
-@media (min-width:800px){.quotes{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
+@media (min-width:800px){.quotes{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}}
 .q{border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:16px}
 .q p{color:var(--ink-2);font-size:15.5px;line-height:1.65;flex:1}
 .q .who{display:flex;align-items:center;gap:12px}
@@ -207,10 +177,6 @@ details p{padding:0 0 18px;color:var(--ink-2);max-width:66ch}
 .last h2{color:#fff;max-width:20ch}
 .last p{margin-top:14px;color:#C9CDD4;max-width:58ch;font-size:17px}
 .last .btn{margin-top:26px}
-.last .facts{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;font-size:14px;color:#C9CDD4}
-.last .facts span{display:inline-flex;align-items:center;gap:8px}
-.last .facts svg{flex:none}
-
 /* ================= sticky bar (mobile) ================= */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:55;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);
   padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:14px;
@@ -277,22 +243,25 @@ body{padding-bottom:84px}
 <section class="hero" id="top">
   <div class="wrap">
     <div class="hero-copy">
-      <span class="pill"><i></i>Delhi NCR's largest resale property platform</span>
+      <span class="pill"><i></i>Delhi NCR's largest resale platform</span>
       <h1>The resale flats you actually want to buy.</h1>
-      <p class="sub">Staged, legally verified, price already negotiated with the owner. We take you to 4–6 of them in one planned weekend round for ₹990, refundable with no conditions.</p>
+      <p class="sub">Staged, legally verified, price already fixed with the owner. See 4–6 of them in one weekend for ₹990, fully refundable.</p>
 
       <div class="price" id="priceBlock" aria-label="Launch price ₹990, was ₹2,990">
         <span class="was" aria-hidden="true">₹2,990</span>
         <span class="now" id="nowPrice">₹2,990</span>
         <span class="off">67% off</span>
-        <div class="price-cap"><b>Launch price.</b> A refundable booking amount for a guaranteed 4–6 visit round, not a brokerage fee.</div>
+        <div class="price-cap"><b>Launch price.</b> Refundable booking amount, not a brokerage fee.</div>
       </div>
 
       <div class="hero-cta"><button class="btn btn-primary btn-block" data-go>Book my visits for ₹990</button></div>
 
       <div class="guarantee">
-        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.2l5.4 2.1v4.3c0 3-2.2 5.6-5.4 7.2-3.2-1.6-5.4-4.2-5.4-7.2V3.3L8 1.2z" stroke="#118D57" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.6 8l1.7 1.7 3.3-3.4" stroke="#118D57" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div><b>Two guarantees.</b> We arrange 4–6 visits or you don't pay. If you like none of the flats, reply REFUND on WhatsApp and the money is back in 48 hours. No forms, no deductions.</div>
+        <b>Two guarantees</b>
+        <ul>
+          <li>We arrange 4–6 visits, or you don't pay.</li>
+          <li>Like none of them? Reply REFUND on WhatsApp. Money back in 48 hours.</li>
+        </ul>
       </div>
 
       <div class="proof" aria-label="Openhouse track record, last two years">
@@ -310,7 +279,7 @@ body{padding-bottom:84px}
     <div class="hero-form" id="book">
       <div class="card">
         <h2>Book your visit round</h2>
-        <p class="lede">Tell us what you're looking for. We only show flats we hold exclusively, so the count updates as you choose.</p>
+        <p class="lede">We only show flats we hold exclusively.</p>
 
         <form class="form" id="form" novalidate>
           <div class="field">
@@ -395,7 +364,7 @@ body{padding-bottom:84px}
 
           <div class="err" id="e_form" role="alert"></div>
           <button class="btn btn-primary btn-block" type="submit" id="payBtn">Pay ₹990 and book my visits</button>
-          <p class="pay-note"><b>Fully refundable.</b> UPI, cards and netbanking. By continuing you agree to our <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.</p>
+          <p class="pay-note"><b>Fully refundable.</b> UPI, cards, netbanking. By continuing you agree to the <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.</p>
           <div class="rzp">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.8"/></svg>
             Payments secured by Razorpay
@@ -406,53 +375,13 @@ body{padding-bottom:84px}
   </div>
 </section>
 
-<!-- ================= HONEST ================= -->
-<section class="honest">
-  <div class="wrap">
-    <h2 class="measure">Let's be honest about flat hunting</h2>
-    <div class="honest-body">
-      <p>You enquire once on a portal and eleven people call you within the hour. None of them has the keys to the flat you asked about.</p>
-      <p>The flat in the photo is "just sold". But they have something better, slightly over your budget, in a sector you never mentioned.</p>
-      <p>You take a Sunday off, drive across the city, and see two empty flats that were never in your range. Then the price changes depending on who you ask, and the papers turn out to be a three-month problem.</p>
-      <div class="rule"></div>
-      <p>The reason none of it works: everybody is passing along someone else's flat. Nobody actually owns the responsibility for the price, the papers or the keys.</p>
-      <p class="big">So we stopped passing flats along. We take each one exclusively, fix the price, clean the papers and stage it, before you ever see it.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= METHOD ================= -->
-<section class="method">
-  <div class="wrap">
-    <h2 class="measure">We're not a listing site. We're an asset manager.</h2>
-    <p class="lede">A portal shows you flats it has no control over. We take control of the flat first, then show it to you. That difference is the entire page.</p>
-    <div class="stack">
-      <div class="sl s1"><div class="pc">10%</div><div><h3>Seeing the listing</h3><div class="bar"><i style="width:10%"></i></div><p>Where every buyer starts. Anyone can show you a photo. It decides almost nothing.</p></div></div>
-      <div class="sl s2"><div class="pc">30%</div><div><h3>Walking into a home, not a shell</h3><div class="bar"><i style="width:30%"></i></div><p>Each flat is professionally staged before viewing, so you see what it becomes, not dust and bare walls.</p></div></div>
-      <div class="sl s3"><div class="pc">60%</div><div><h3>Owning the flat's mandate, price and paperwork</h3><div class="bar"><i style="width:60%"></i></div><p>We hold it exclusively, negotiate the price with the owner before listing, and clear the title and dues. By the time you arrive, there is nothing left to fight about.</p></div></div>
-    </div>
-    <p class="stack-note">Everyone else sells you the top 10%. We do the 60% first. That's why buying from us takes an afternoon, not six months.</p>
-  </div>
-</section>
-
 <!-- ================= SHOWCASE ================= -->
 <section class="showcase">
   <div class="wrap">
-    <h2 class="measure">Staged, verified, and exclusively ours</h2>
-    <p class="lede">A sample of what's with us right now. Each one is held exclusively by Openhouse, professionally staged, legally cleared and priced before it reaches you.</p>
+    <h2 class="measure">Flats we hold right now</h2>
+    <p class="lede">Each one is exclusive to Openhouse, staged and legally cleared before you see it.</p>
     <div class="rail" id="rail"></div>
-    <p class="rail-note">Sample of current exclusive inventory as listed on openhouse.in. Availability changes daily; prices are subject to change.</p>
-  </div>
-</section>
-
-<!-- ================= COMPARE ================= -->
-<section style="padding-top:0">
-  <div class="wrap">
-    <h2 class="measure">You have options. Here's how they stack up.</h2>
-    <table class="cmp">
-      <thead><tr><th scope="col"><span class="sr-only">Aspect</span></th><th scope="col">Brokers &amp; portals</th><th scope="col">Openhouse</th></tr></thead>
-      <tbody id="cmpBody"></tbody>
-    </table>
+    <p class="rail-note">Sample from openhouse.in. Availability and prices change.</p>
   </div>
 </section>
 
@@ -460,72 +389,45 @@ body{padding-bottom:84px}
 <section style="padding-top:0">
   <div class="wrap">
     <h2 class="measure">How it works</h2>
-    <p class="lede">Four steps. The counter in the form shows how many exclusive flats match before you pay anything.</p>
     <div class="flow">
-      <div class="fi"><div class="num">1</div><div><h3>Fill one form</h3><p>City, configuration, budget, the areas you actually want, and when you're free. Takes about a minute. We confirm your number with an OTP.</p></div></div>
-      <div class="fi"><div class="num">2</div><div><h3>Pay ₹990</h3><p>Our team contacts you within 24 hours. Your shortlist reaches WhatsApp with each flat's fixed price, staged photos, floor plan and legal status.</p></div></div>
-      <div class="fi"><div class="num">3</div><div><h3>We take you to see all 4–6</h3><p>One Openhouse person, one route, all flats in a single round. We hold the keys, so nothing gets cancelled. Usually 3 to 4 hours.</p></div></div>
-      <div class="fi"><div class="num">4</div><div><h3>You buy one, or you take your money back</h3><p>Found the one? The price is set and the papers are done, so we go straight to agreement and registry. Found nothing? Your ₹990 comes back.</p></div></div>
+      <div class="fi"><div class="num">1</div><div><h3>Fill the form, pay ₹990</h3><p>Takes a minute. We confirm your number with an OTP.</p></div></div>
+      <div class="fi"><div class="num">2</div><div><h3>We call within 24 hours</h3><p>Your 4–6 flats arrive on WhatsApp with fixed prices and legal status.</p></div></div>
+      <div class="fi"><div class="num">3</div><div><h3>One round, all the flats</h3><p>One Openhouse person, one route, keys in hand. About 3–4 hours.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ================= WHO ================= -->
+<!-- ================= COMPARE ================= -->
 <section style="padding-top:0">
   <div class="wrap">
-    <h2 class="measure">Is this for you?</h2>
-    <div class="who-grid" id="whoGrid"></div>
-    <div class="notfor" id="notFor"></div>
+    <h2 class="measure">Portals vs Openhouse</h2>
+    <table class="cmp">
+      <thead><tr><th scope="col"></th><th scope="col">Brokers &amp; portals</th><th scope="col">Openhouse</th></tr></thead>
+      <tbody id="cmpBody"></tbody>
+    </table>
   </div>
 </section>
 
 <!-- ================= VALUE ================= -->
 <section style="padding-top:0">
   <div class="wrap">
-    <h2 class="measure">Everything included for ₹990</h2>
+    <h2 class="measure">What ₹990 gets you</h2>
     <div class="vs">
-      <div class="vs-h">Your guaranteed visit round</div>
-      <div id="vsCore"></div>
-      <div class="vs-h" style="border-top:1px solid var(--line)">Included with it</div>
-      <div id="vsBonus"></div>
+      <div id="vsList"></div>
       <div class="vs-f">
         <div class="pp"><span class="m">₹2,990</span><span class="n">₹990</span></div>
-        <small>Refundable. Adjusted against our fee if you buy through us.</small>
+        <small>Refundable. Adjusted against our fee if you buy.</small>
       </div>
     </div>
     <button class="btn btn-primary btn-block" data-go style="margin-top:20px">Book my visits for ₹990</button>
-  </div>
-</section>
-
-<!-- ================= PROMISE ================= -->
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="promise">
-      <h2>Both guarantees, in plain words</h2>
-      <p>We hold the flats, we set the price and we clear the papers, so the only thing left to prove is whether you like the homes. Test us for ₹990, with two ways out that cost you nothing.</p>
-      <div class="two-g">
-        <div class="g">
-          <h3><svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#118D57"/><path d="M4.9 8.2l2.1 2.1 4.2-4.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Visit guarantee</h3>
-          <p>We arrange 4 to 6 visits in your budget and areas. If we can't, your ₹990 is returned before you step out of the house.</p>
-        </div>
-        <div class="g">
-          <h3><svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#FA541C"/><path d="M4.9 8.2l2.1 2.1 4.2-4.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Refund guarantee</h3>
-          <p>See all of them, and if none is worth a second look, reply REFUND on WhatsApp. One message is enough.</p>
-        </div>
-      </div>
-      <ul>
-        <li>Money reaches the same account within 48 hours.</li>
-        <li>No form, no deduction, no "but you didn't see all of them".</li>
-        <li>Ask any time within 30 days of your visit round.</li>
-      </ul>
-    </div>
+    <div class="notfor" id="notFor"></div>
   </div>
 </section>
 
 <!-- ================= QUOTES ================= -->
 <section style="padding-top:0">
   <div class="wrap">
-    <h2 class="measure">What buyers say after the visits</h2>
+    <h2 class="measure">From buyers</h2>
     <div class="quotes" id="quotes"></div>
   </div>
 </section>
@@ -533,7 +435,7 @@ body{padding-bottom:84px}
 <!-- ================= FAQ ================= -->
 <section style="padding-top:0">
   <div class="wrap">
-    <h2 class="measure">Questions, answered</h2>
+    <h2 class="measure">Common questions</h2>
     <div class="faq" id="faq"></div>
   </div>
 </section>
@@ -541,15 +443,9 @@ body{padding-bottom:84px}
 <!-- ================= LAST ================= -->
 <section class="last">
   <div class="wrap">
-    <h2>Guaranteed 4–6 flats, your weekend, ₹990.</h2>
-    <p>Every home is staged, legally verified and held exclusively by us. Full refund if you don't like any flat.</p>
+    <h2>4–6 verified flats. One weekend. ₹990.</h2>
+    <p>Refundable if you don't like any of them.</p>
     <button class="btn btn-primary" data-go>Book my visits for ₹990</button>
-    <div class="facts">
-      <span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#FA541C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Guaranteed 4–6 visits</span>
-      <span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#FA541C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>300+ exclusive flats</span>
-      <span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#FA541C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>17,932 visits done</span>
-      <span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#FA541C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Refundable within 48 hours</span>
-    </div>
   </div>
 </section>
 
@@ -558,7 +454,7 @@ body{padding-bottom:84px}
     <div class="foot-grid">
       <div class="foot-brand">
         <img src="/assets/logo.png" alt="Openhouse" width="150" height="30">
-        <p>Openhouse is transforming residential resale transactions by making them transparent, hassle-free, and ensuring the best price. We offer complete transaction support, including legal documentation and property registration.</p>
+        <p>Verified resale homes in Gurgaon, Noida and Ghaziabad, with legal checks, negotiation and registration handled by us.</p>
       </div>
       <div>
         <h4>Company</h4>
@@ -581,7 +477,7 @@ body{padding-bottom:84px}
       </div>
     </div>
     <div class="foot-note">
-      <p>Openhouse is a property asset management company operating in Gurgaon, Noida and Ghaziabad. Homes shown are held under exclusive mandate from their owners, professionally staged and legally verified prior to viewing. Visit and buyer figures cover the last two years. Availability changes daily. The ₹990 is a refundable booking amount, not a brokerage fee; our standard fee applies only if you buy a home through us, and the ₹990 is adjusted against it. This site is not part of Meta or Facebook.</p>
+      <p>Openhouse operates in Gurgaon, Noida and Ghaziabad. The ₹990 is a refundable booking amount, not a brokerage fee. Our standard fee applies only if you buy through us, and the ₹990 is adjusted against it. This site is not part of Meta or Facebook.</p>
       <p>© 2026 "Openhouse" by Avano Technologies Private Limited. All rights reserved.</p>
     </div>
   </div>
@@ -886,69 +782,45 @@ async function confirmPayment(resp) {
 
 /* ---------------- content ---------------- */
 const CMP = [
-  ['Who holds the flat', "A broker forwarding someone else's listing", 'Openhouse, exclusively. We are the only party you deal with'],
-  ['The price', 'Changes depending on who you ask', 'Already negotiated with the owner before listing. Fixed'],
-  ['What you walk into', 'An empty, dusty flat you have to imagine', 'A professionally staged home you can picture living in'],
-  ['The paperwork', 'Your problem, found out three months later', 'Title, chain and dues legally verified before you see it'],
-  ['Talking to the owner', 'Endless rounds, through a middleman', 'Never. Everything sits with us'],
-  ['Your Sunday', 'Two flats, one of them wrong', '4–6 flats in a single planned round'],
-  ['If nothing fits', 'Start again next weekend', '₹990 back in 48 hours, no conditions'],
+  ['Who holds the flat', 'Someone forwarding a listing', 'Openhouse, exclusively'],
+  ['The price', 'Changes with who you ask', 'Fixed with the owner before listing'],
+  ['The paperwork', 'Your problem, found out later', 'Title and dues verified before you visit'],
+  ['If nothing fits', 'Try again next weekend', '₹990 back in 48 hours'],
 ];
 $('#cmpBody').innerHTML = CMP.map(([k, a, b]) => `<tr><td>${esc(k)}</td><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('');
 
-const WHO = [
-  ['First-time buyers', "You've saved up, you're ready, and you have no idea which of 40 societies is actually worth your money.", "You'll see homes that are already priced, staged and legally clean."],
-  ['Families upgrading', "You need a bigger home in the same schools' catchment, and you can't afford to waste weekends.", 'One round, all the options in your sector, real prices.'],
-  ['NRIs and out-of-city buyers', 'You fly in for a week and lose four days to brokers who show you the wrong things.', 'A full visit round planned before you land.'],
-  ['Investors', 'You want clean papers and a price that holds, not a pitch about the clubhouse.', 'Title, encumbrance and dues cleared before the flat reaches your list.'],
+const VS = [
+  '4–6 exclusive flats, guaranteed',
+  'Prices fixed before you visit',
+  'Every flat staged and photographed',
+  'Legal checks already done',
+  'One planned weekend round, keys with us',
+  'Agreement, registry and loan support if you buy',
 ];
-$('#whoGrid').innerHTML = WHO.map(([t, d, a]) => `<div class="wc"><h3>${esc(t)}</h3><p>${esc(d)}</p><div class="after">${esc(a)}</div></div>`).join('');
+$('#vsList').innerHTML = VS.map(t => `<div class="vi"><svg width="22" height="22" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7.25" fill="#1A1F2C"/><path d="M4.9 8.2l2.1 2.1 4.2-4.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><b>${esc(t)}</b></div>`).join('');
+
 const NOTFOR = [
-  "You want to browse listings from your sofa. That's what portals are for.",
-  "You're buying 12 months from now and just exploring.",
-  'You want an under-construction or builder project. We only do resale.',
-  "You can't give us one block of 3–4 hours in the next 30 days.",
+  'You only want to browse listings',
+  "You're buying a year or more from now",
+  'You want under-construction, not resale',
 ];
-$('#notFor').innerHTML = '<h3>This is not for you if</h3>' + NOTFOR.map(t => `<div><span class="x">×</span><span>${esc(t)}</span></div>`).join('');
+$('#notFor').innerHTML = '<h3>Not for you if</h3>' + NOTFOR.map(t => `<div><span class="x">×</span><span>${esc(t)}</span></div>`).join('');
 
-const VS_CORE = [
-  ['Guaranteed 4–6 exclusive Openhouse homes', 'Not forwarded listings. Every flat on your list is held exclusively by us, so nothing is "just sold" when you arrive.'],
-  ['A fixed price, already negotiated', 'We settle the number with the owner before the flat is ever listed. What you see is the price. No haggling, no games.'],
-  ['Professionally staged flats', 'Furnished and photographed before viewing, so you walk into a home instead of an empty shell.'],
-  ['All of them in one weekend round', 'We hold the keys and plan the route. You give us one weekend, not six.'],
-];
-const VS_BONUS = [
-  ['Legal verification already done', 'Title, chain of ownership, encumbrance and society dues cleared before the flat reaches your list.'],
-  ['You never deal with an owner', 'Openhouse is the single counterparty for the price, the documents and the handover.'],
-  ['Agreement, registry and loan support', 'Our team runs the paperwork, bank coordination and registry end to end.'],
-  ['Full refund if none of them work', 'Reply REFUND on WhatsApp. Money back in 48 hours, no conditions.'],
-];
-const vsHTML = (t, d, c) => `<div class="vi"><svg width="24" height="24" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7.25" fill="${c}"/><path d="M4.9 8.2l2.1 2.1 4.2-4.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>${esc(t)}</b><p>${esc(d)}</p></div></div>`;
-$('#vsCore').innerHTML = VS_CORE.map(([t, d]) => vsHTML(t, d, '#1A1F2C')).join('');
-$('#vsBonus').innerHTML = VS_BONUS.map(([t, d]) => vsHTML(t, d, '#FA541C')).join('');
-
-// Real customer stories from openhouse.in
+// Real customer stories from openhouse.in, shortened
 const QUOTES = [
-  ['customer-1.webp', 'Harsh and Vinita', 'Bought in New Gurgaon', "Finding a home can be incredibly challenging. We aimed to buy in New Gurgaon, and after connecting online with various brokers and going on multiple visits, we still couldn't decide. Openhouse stepped in and clarified our specific needs, showing us only homes that truly matched our preferences. The fully furnished and well-lit homes made viewing enjoyable. We simply signed the agreement, and everything else was handled smoothly by their team."],
-  ['customer-2.webp', 'Nishant and Ashi', 'Found a home in two weeks', "A friend recommended Openhouse to me. They were clear and upfront, taking the time to understand my exact requirements. Within just two weeks, they reached out saying they'd found a home that matched my specifications perfectly. I'd been looking on my own for months without success. The entire buying process was smooth and professional, with regular updates along the way."],
-  ['customer-3.webp', 'Akshay and Tanya', 'Bought after a year of searching', "I'd been on the hunt for a new home for nearly a year but couldn't find anything that felt right or was worth the price. Openhouse showed me homes that were beautifully staged and designed to feel welcoming, making the decision so much easier. Within two months they located a place that met all my needs, and their team handled all the paperwork and formalities."],
-  ['customer-4.jpeg', 'Sanjay Rastogi', 'Group Head, Corporate Finance at Olam Agri', "It was truly a pleasure. Everyone was very thorough, responsive, and professional throughout the process. I really appreciate the attention to detail and the smooth way everything was handled. I would certainly recommend Openhouse to my friends and contacts."],
+  ['customer-1.webp', 'Harsh and Vinita', 'Bought in New Gurgaon', 'Openhouse showed us only homes that matched what we wanted. We signed the agreement and their team handled the rest.'],
+  ['customer-2.webp', 'Nishant and Ashi', 'Found a home in two weeks', "Within two weeks they found a home that matched my requirements. I'd been looking on my own for months."],
+  ['customer-3.webp', 'Akshay and Tanya', 'Bought after a year of searching', 'Beautifully staged homes made the decision easy. Their team handled all the paperwork.'],
 ];
 $('#quotes').innerHTML = QUOTES.map(([img, who, sub, text]) => `<div class="q"><p>“${esc(text)}”</p><div class="who"><img src="/assets/${img}" alt="" loading="lazy" width="44" height="44"><div><b>${esc(who)}</b><span>${esc(sub)}</span></div></div></div>`).join('');
 
 const FAQ = [
-  ['What exactly is guaranteed for ₹990?', 'Two things. First, 4 to 6 visits to flats that match the budget, configuration and areas you selected. If we cannot put 4 together, we return your ₹990 before you travel anywhere. Second, if you see them all and like none, you get a full refund.'],
-  ['What does "exclusive" actually mean?', 'Openhouse signs an exclusive mandate with the owner before a flat goes live. We hold the keys, we set the price with them, we get the flat staged and we complete the legal checks. No other broker can show you that flat, and nothing is "just sold" when you turn up.'],
-  ['Is the price negotiable?', 'It is already negotiated. We settle the number with the owner before the flat is listed, so what you see is the closing price, not a starting point. That is why buying from us takes days rather than months of back-and-forth.'],
-  ['Do I have to deal with the owner at all?', 'No. Openhouse is your single counterparty for the price, the documents, the handover and the registry. Most of our buyers never meet the owner until the registry, and many never at all.'],
-  ['Why should I pay anything just to see flats?', 'Because it changes what you get. We block a person for your search, plan a route around your free time and open 4–6 flats we hold the keys to. Buyers who pay get a planned visit round instead of a phone number and a maybe. And if it doesn\'t work out, the money comes back.'],
-  ["What if I don't like any of the flats?", 'Reply REFUND on WhatsApp. Your ₹990 is returned within 48 hours. No form, no deduction, no explanation needed from you.'],
-  ['Do I pay brokerage on top if I buy?', 'Yes, our standard fee applies when the deal closes, and the ₹990 is adjusted into it. So if you buy through us, the booking amount costs you nothing.'],
-  ['Are these builder flats or resale?', 'Resale only. Ready homes in existing societies, held exclusively by Openhouse, staged and legally verified before you see them.'],
-  ["What if you don't have 6 flats in my budget and area?", 'The counter in the form tells you before you pay. If stock is thin we fill the round from the sectors next door, and if there is genuinely nothing in our exclusive inventory, we say so and you don\'t pay.'],
-  ['How soon can I visit?', 'Pick this weekend and we confirm your slot the same day. All 4–6 flats are covered in one round, usually 3 to 4 hours.'],
-  ['Will I be called again and again?', 'No. One call to confirm the flats and your slot. Everything else comes on WhatsApp.'],
-  ['Is my number going to be sold to other brokers?', 'No. Your details stay with Openhouse and are used only to arrange your visits.'],
+  ['What is guaranteed for ₹990?', "4–6 visits matching your budget, configuration and areas. If we can't arrange 4, we refund before you travel. If you see them all and like none, full refund."],
+  ['How do I get the refund?', 'Reply REFUND on WhatsApp. The money reaches the same account within 48 hours, no form, no deduction. Ask within 30 days of your visit round.'],
+  ['Is the price negotiable?', "It's already negotiated with the owner before listing. What you see is the closing price."],
+  ['Do I pay brokerage if I buy?', 'Yes, our standard fee applies at closing, and the ₹990 is adjusted against it.'],
+  ['Builder flats or resale?', 'Resale only. Ready homes in existing societies.'],
+  ['Will my number be shared?', 'No. One call to confirm your flats and slot, everything else on WhatsApp.'],
 ];
 $('#faq').innerHTML = FAQ.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('');
 
