@@ -1,0 +1,16 @@
+# secrets
+.env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# deps / build
+node_modules/
+.vercel/
+.DS_Store
+
+# test output
+frontend/test-results/
+frontend/screenshots/

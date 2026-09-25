@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Openhouse — Guaranteed 4–6 verified flat visits for ₹990 in Gurgaon, Noida & Ghaziabad</title>
+<meta name="description" content="Staged, legally verified resale flats with the price already negotiated. Guaranteed 4–6 visits in one weekend round for ₹990, fully refundable. Delhi NCR's largest resale property platform.">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="canonical" href="https://bookvisit.openhouse.in/">
+<meta property="og:title" content="Guaranteed 4–6 verified flat visits for ₹990 | Openhouse">
+<meta property="og:description" content="Staged, legally verified resale flats, price already negotiated. One weekend, 4–6 visits, ₹990 fully refundable.">
+<meta property="og:image" content="https://bookvisit.openhouse.in/assets/hero-1.jpg">
+<meta property="og:url" content="https://bookvisit.openhouse.in/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="preload" as="image" href="/assets/hero-1.jpg">
+<style>
+/* ================= hero: the booking desk ================= */
+.hero{padding:0;background:linear-gradient(180deg,var(--paper-warm) 0%,var(--paper) 100%);border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:36px;padding-top:36px;padding-bottom:48px}
+@media (min-width:980px){
+  .hero .wrap{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;padding-top:56px;padding-bottom:72px;align-items:start}
+}
+@media (min-width:980px) and (min-height:1150px){.hero-form{position:sticky;top:84px}}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:999px;
+  padding:7px 14px;font-size:13px;font-weight:500;color:var(--ink-2);box-shadow:var(--shadow)}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--ok)}
+.hero h1{margin-top:18px;max-width:14ch}
+.hero .sub{margin-top:18px;font-size:18px;color:var(--ink-2);max-width:46ch}
+.price{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-top:28px}
+.price .was{position:relative;font-weight:600;font-size:24px;color:#9AA1AB;line-height:1;padding-bottom:6px}
+.price .was::after{content:"";position:absolute;left:-3px;right:-3px;top:46%;height:3px;border-radius:2px;background:var(--accent-ink);transform:scaleX(0);transform-origin:left}
+.price .now{font-weight:800;font-size:clamp(44px,8vw,64px);letter-spacing:-.04em;line-height:1;color:var(--ink);opacity:0;transform:translateY(8px)}
+.price .off{background:var(--accent);color:#fff;border-radius:8px;padding:6px 10px;font-weight:700;font-size:14px;line-height:1;margin-bottom:8px;opacity:0;transform:scale(.6)}
+.price-cap{width:100%;font-size:14px;color:var(--muted);margin-top:2px}
+.price-cap b{color:var(--ink);font-weight:600}
+.go .was::after{animation:strike .45s .25s var(--ease-out) forwards}
+.go .now{animation:rise .5s .3s var(--ease-out) forwards}
+.go .off{animation:pop .4s .85s cubic-bezier(.2,1.6,.4,1) forwards}
+@keyframes strike{to{transform:scaleX(1)}}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+@keyframes pop{to{opacity:1;transform:scale(1)}}
+.hero-cta{margin-top:22px}
+@media (min-width:980px){.hero-cta{display:none}}
+.guarantee{display:flex;gap:12px;align-items:flex-start;margin-top:22px;background:var(--paper);border:1px solid var(--line);
+  border-left:4px solid var(--ok);border-radius:12px;padding:14px 16px;font-size:15px;box-shadow:var(--shadow);max-width:60ch}
+.guarantee b{color:var(--ink);font-weight:600}
+.guarantee svg{flex:none;margin-top:2px}
+.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px;max-width:560px}
+.proof div{border-top:2px solid var(--ink);padding-top:10px}
+.proof b{display:block;font-size:24px;font-weight:800;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.proof span{display:block;margin-top:6px;font-size:13px;color:var(--muted);line-height:1.35}
+.hero-photo{margin-top:32px;border-radius:var(--radius-l);overflow:hidden;position:relative;box-shadow:var(--shadow-lift)}
+.hero-photo img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.hero-photo figcaption{position:absolute;left:14px;bottom:14px;background:rgba(26,31,44,.82);color:#fff;font-size:13px;font-weight:500;
+  padding:8px 12px;border-radius:8px;backdrop-filter:blur(6px)}
+
+/* ================= form card ================= */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-l);box-shadow:var(--shadow-lift);padding:24px 20px 20px}
+@media (min-width:540px){.card{padding:30px 28px 26px}}
+.card h2{font-size:24px}
+.card .lede{font-size:15px;margin-top:8px;color:var(--muted)}
+.form{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:22px}
+.field label{display:block;font-weight:600;font-size:14px;margin-bottom:7px}
+.field .hint{font-weight:400;color:var(--muted)}
+.field input,.field select{width:100%;min-width:0;max-width:100%;border:1.5px solid var(--line-strong);border-radius:10px;background:var(--paper);
+  padding:13px 14px;font-size:16px;line-height:1.3;transition:border-color var(--dur) var(--ease-out),box-shadow var(--dur) var(--ease-out)}
+.field select{appearance:none;-webkit-appearance:none;padding-right:40px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%233A404B' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center}
+.field input:focus,.field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(250,84,28,.16)}
+.field input.invalid,.field select.invalid{border-color:var(--accent-ink);background:#FFF7F5}
+.field select:disabled{color:var(--muted);background-color:var(--paper-soft)}
+.err{display:none;margin-top:6px;font-size:13px;color:var(--accent-ink);font-weight:500}
+.err.show{display:block}
+.two{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+@media (min-width:440px){.two{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips:empty{display:none}
+.chip{border:1.5px solid var(--line-strong);background:var(--paper);border-radius:999px;padding:7px 13px;font-size:14px;font-weight:500;cursor:pointer;
+  transition:border-color var(--dur) var(--ease-out),background var(--dur) var(--ease-out)}
+.chip[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:#fff}
+.chip.any[aria-pressed="false"]{border-style:dashed}
+.live{border:1px solid var(--line);border-radius:12px;padding:13px 15px;background:var(--paper-soft);font-size:14px;color:var(--muted);transition:background var(--dur) var(--ease-out)}
+.live-top{display:flex;align-items:flex-start;gap:10px}
+.live i{flex:none;width:9px;height:9px;border-radius:50%;background:#C4CAD3;margin-top:6px}
+.live.on{background:var(--ok-soft);border-color:#BFE3CE;color:var(--ink)}
+.live.on i{background:var(--ok)}
+.live.warn{background:var(--warn-soft);border-color:#F0DFAE;color:var(--ink)}
+.live.warn i{background:var(--warn)}
+.live.none{background:var(--accent-soft);border-color:#F8CDB9;color:var(--ink)}
+.live.none i{background:var(--accent)}
+.live-n{font-weight:800;font-size:22px;letter-spacing:-.02em}
+.live-sub{margin-top:6px;padding-left:19px;font-size:13.5px;color:var(--ink-2)}
+.pay-note{font-size:13px;color:var(--muted);text-align:center;line-height:1.5}
+.pay-note b{color:var(--ink);font-weight:600}
+.pay-note a{color:var(--muted)}
+.rzp{display:flex;justify-content:center;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+
+/* ================= sections ================= */
+.honest{background:var(--paper)}
+.honest-body{margin-top:22px;display:grid;gap:16px;max-width:62ch;font-size:17px;color:var(--ink-2)}
+.honest-body .rule{height:1px;background:var(--line);margin:8px 0}
+.honest-body .big{font-size:clamp(20px,2.4vw,26px);font-weight:700;color:var(--ink);letter-spacing:-.015em;line-height:1.3}
+
+.method{background:var(--paper-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stack{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:32px}
+.sl{display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;align-items:start}
+.sl .pc{font-weight:800;font-size:28px;letter-spacing:-.03em;line-height:1;color:var(--ink);padding-top:2px;font-variant-numeric:tabular-nums}
+.sl .bar{height:8px;border-radius:99px;background:var(--line-strong);margin-top:12px;overflow:hidden}
+.sl .bar i{display:block;height:100%;border-radius:99px;background:var(--ink)}
+.sl.s3 .bar i{background:var(--accent)}
+.sl p{margin-top:6px;color:var(--ink-2);max-width:60ch}
+.stack-note{margin-top:28px;font-weight:600;max-width:60ch;color:var(--ink)}
+
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(78%,300px);gap:14px;overflow-x:auto;padding:24px var(--gutter) 6px;margin:0 calc(-1*var(--gutter));
+  scroll-snap-type:x mandatory;scroll-padding-left:var(--gutter);scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+@media (min-width:900px){.rail{grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-columns:auto;gap:22px;overflow:visible;margin:0;padding:32px 0 0}}
+.prop{scroll-snap-align:start;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--paper)}
+.prop img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.prop-b{padding:14px 16px 16px}
+.prop .soc{font-weight:700;font-size:16px}
+.prop .loc{font-size:14px;color:var(--muted);margin-top:2px}
+.prop .meta{display:flex;justify-content:space-between;gap:10px;margin-top:10px;font-size:14px}
+.prop .meta b{font-weight:700}
+.prop .tag{position:absolute}
+.prop-img{position:relative}
+.prop .badge{position:absolute;left:10px;top:10px;background:var(--paper);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:600;display:inline-flex;align-items:center;gap:6px;color:var(--ok)}
+.rail-note{margin-top:16px;font-size:13px;color:var(--muted)}
+
+.cmp{width:100%;border-collapse:collapse;margin-top:28px;font-size:15px}
+.cmp th{text-align:left;font-size:13px;font-weight:600;color:var(--muted);padding:0 10px 10px 0;border-bottom:2px solid var(--ink)}
+.cmp th:last-child{color:var(--accent-ink)}
+.cmp td{vertical-align:top;padding:14px 12px 14px 0;border-bottom:1px solid var(--line);color:var(--ink-2)}
+.cmp td:first-child{font-weight:600;color:var(--ink);width:26%}
+.cmp td:last-child{color:var(--ink);font-weight:500}
+@media (max-width:560px){
+  .cmp thead{display:none}
+  .cmp tr{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+  .cmp td{display:block;border:0;padding:4px 0;width:auto}
+  .cmp td:first-child{width:auto;padding-bottom:6px}
+  .cmp td:nth-child(2)::before{content:"Brokers & portals: ";color:var(--muted);font-weight:500}
+  .cmp td:nth-child(3)::before{content:"Openhouse: ";color:var(--accent-ink);font-weight:600}
+}
+
+.flow{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-top:32px}
+@media (min-width:800px){.flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px}}
+.fi{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px}
+.fi .num{width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:16px}
+.fi p{margin-top:6px;color:var(--ink-2)}
+
+.who-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:28px}
+@media (min-width:720px){.who-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.wc{border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.wc h3{font-size:18px}
+.wc p{margin-top:8px;color:var(--ink-2);font-size:15px}
+.wc .after{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:15px;font-weight:600;color:var(--ok)}
+.notfor{margin-top:22px;border:1.5px dashed var(--line-strong);border-radius:var(--radius);padding:20px}
+.notfor h3{font-size:16px;margin-bottom:10px}
+.notfor div{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--ink-2);margin-top:8px}
+.notfor .x{color:var(--accent-ink);font-weight:700;flex:none}
+
+.vs{margin-top:28px;border:1px solid var(--line);border-radius:var(--radius-l);overflow:hidden}
+.vs-h{background:var(--paper-soft);padding:12px 20px;font-weight:700;font-size:14px;border-bottom:1px solid var(--line)}
+.vi{display:grid;grid-template-columns:24px minmax(0,1fr);gap:14px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.vi:last-child{border-bottom:0}
+.vi b{font-weight:700}
+.vi p{margin-top:4px;color:var(--ink-2);font-size:15px}
+.vs-f{padding:18px 20px;background:var(--ink);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.vs-f .pp{display:flex;align-items:baseline;gap:10px}
+.vs-f .m{text-decoration:line-through;color:#98A0AB;font-weight:600}
+.vs-f .n{font-weight:800;font-size:28px;letter-spacing:-.03em}
+.vs-f small{color:#C9CDD4;font-size:13px}
+
+.promise{background:var(--paper-warm);border:1px solid var(--line);border-radius:var(--radius-l);padding:28px 22px}
+@media (min-width:720px){.promise{padding:44px 48px}}
+.promise p{margin-top:12px;color:var(--ink-2);max-width:62ch}
+.promise .two-g{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:24px}
+@media (min-width:720px){.promise .two-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.promise .g{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.promise .g h3{font-size:17px;display:flex;align-items:center;gap:10px}
+.promise .g p{font-size:15px;margin-top:8px}
+.promise ul{margin:22px 0 0;padding-left:20px;color:var(--ink-2);display:grid;gap:6px}
+
+.quotes{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:32px}
+@media (min-width:800px){.quotes{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
+.q{border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:16px}
+.q p{color:var(--ink-2);font-size:15.5px;line-height:1.65;flex:1}
+.q .who{display:flex;align-items:center;gap:12px}
+.q .who img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.q .who b{display:block;font-size:15px}
+.q .who span{font-size:13px;color:var(--muted)}
+
+details{border-bottom:1px solid var(--line);padding:4px 0}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;font-weight:600;font-size:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-weight:400;font-size:24px;color:var(--muted);line-height:1;flex:none;transition:transform var(--dur) var(--ease-out)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 18px;color:var(--ink-2);max-width:66ch}
+.faq{margin-top:24px}
+
+.last{background:var(--ink);color:#fff;text-align:left}
+.last h2{color:#fff;max-width:20ch}
+.last p{margin-top:14px;color:#C9CDD4;max-width:58ch;font-size:17px}
+.last .btn{margin-top:26px}
+.last .facts{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;font-size:14px;color:#C9CDD4}
+.last .facts span{display:inline-flex;align-items:center;gap:8px}
+.last .facts svg{flex:none}
+
+/* ================= sticky bar (mobile) ================= */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:55;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);
+  padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:14px;
+  transform:translateY(110%);transition:transform var(--dur) var(--ease-out)}
+.sticky.show{transform:translateY(0)}
+.sticky .pp{display:flex;align-items:baseline;gap:8px}
+.sticky .m{text-decoration:line-through;color:#9AA1AB;font-size:13px;font-weight:600}
+.sticky .n{font-weight:800;font-size:20px;letter-spacing:-.03em}
+.sticky .lab{font-size:12px;color:var(--muted);line-height:1.2}
+.sticky .btn{margin-left:auto;padding:12px 18px;font-size:15px}
+@media (min-width:980px){.sticky{display:none}}
+body{padding-bottom:84px}
+@media (min-width:980px){body{padding-bottom:0}}
+
+/* ================= OTP sheet ================= */
+.backdrop{position:fixed;inset:0;background:rgba(26,31,44,.55);z-index:80;opacity:0;transition:opacity var(--dur) var(--ease-out)}
+.backdrop.show{opacity:1}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:81;background:var(--paper);border-radius:22px 22px 0 0;padding:22px 20px calc(24px + env(safe-area-inset-bottom));
+  box-shadow:0 -12px 40px -16px rgba(26,31,44,.4);transform:translateY(100%);transition:transform .32s var(--ease-out);max-height:92vh;overflow:auto}
+.sheet.show{transform:translateY(0)}
+@media (min-width:640px){
+  .sheet{left:50%;right:auto;bottom:auto;top:50%;width:440px;border-radius:var(--radius-l);padding:30px 30px 28px;transform:translate(-50%,-46%);opacity:0;transition:transform .32s var(--ease-out),opacity .32s var(--ease-out)}
+  .sheet.show{transform:translate(-50%,-50%);opacity:1}
+}
+.sheet .grab{width:40px;height:4px;border-radius:2px;background:var(--line-strong);margin:0 auto 18px}
+@media (min-width:640px){.sheet .grab{display:none}}
+.sheet h2{font-size:22px}
+.sheet .to{margin-top:8px;color:var(--ink-2);font-size:15px}
+.sheet .to b{font-weight:700;color:var(--ink)}
+.otp-in{margin-top:20px;width:100%;border:1.5px solid var(--line-strong);border-radius:12px;padding:14px;font-size:28px;font-weight:700;letter-spacing:.42em;text-align:center;
+  font-variant-numeric:tabular-nums;transition:border-color var(--dur) var(--ease-out),box-shadow var(--dur) var(--ease-out)}
+.otp-in:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(250,84,28,.16)}
+.otp-in.invalid{border-color:var(--accent-ink)}
+.sheet .err{margin-top:10px;text-align:center}
+.sheet .btn{margin-top:16px}
+.sheet .links{display:flex;justify-content:space-between;gap:12px;margin-top:16px;font-size:14px}
+.sheet .links button{background:none;border:0;padding:0;color:var(--ink-2);cursor:pointer;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.sheet .links button:disabled{text-decoration:none;color:var(--muted);cursor:default}
+.sheet .fine{margin-top:16px;font-size:12.5px;color:var(--muted);text-align:center}
+.spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.toast{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);z-index:90;background:var(--ink);color:#fff;
+  padding:12px 16px;border-radius:12px;font-size:14px;max-width:calc(100% - 40px);opacity:0;transition:opacity var(--dur) var(--ease-out),transform var(--dur) var(--ease-out);pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media (min-width:980px){.toast{bottom:32px}}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Openhouse home"><img src="/assets/logo.png" alt="Openhouse" width="140" height="28"></a>
+    <div class="head-right">
+      <a class="head-phone" href="tel:+918065453090">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        +91 80654 53090
+      </a>
+      <button class="btn btn-primary head-cta" data-go>Book visits</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO + BOOKING DESK ================= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="pill"><i></i>Delhi NCR's largest resale property platform</span>
+      <h1>The resale flats you actually want to buy.</h1>
+      <p class="sub">Staged, legally verified, price already negotiated with the owner. We take you to 4–6 of them in one planned weekend round for ₹990, refundable with no conditions.</p>
+
+      <div class="price" id="priceBlock" aria-label="Launch price ₹990, was ₹2,990">
+        <span class="was" aria-hidden="true">₹2,990</span>
+        <span class="now" id="nowPrice">₹2,990</span>
+        <span class="off">67% off</span>
+        <div class="price-cap"><b>Launch price.</b> A refundable booking amount for a guaranteed 4–6 visit round, not a brokerage fee.</div>
+      </div>
+
+      <div class="hero-cta"><button class="btn btn-primary btn-block" data-go>Book my visits for ₹990</button></div>
+
+      <div class="guarantee">
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.2l5.4 2.1v4.3c0 3-2.2 5.6-5.4 7.2-3.2-1.6-5.4-4.2-5.4-7.2V3.3L8 1.2z" stroke="#118D57" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.6 8l1.7 1.7 3.3-3.4" stroke="#118D57" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><b>Two guarantees.</b> We arrange 4–6 visits or you don't pay. If you like none of the flats, reply REFUND on WhatsApp and the money is back in 48 hours. No forms, no deductions.</div>
+      </div>
+
+      <div class="proof" aria-label="Openhouse track record, last two years">
+        <div><b>17,932</b><span>property visits conducted</span></div>
+        <div><b>6,200+</b><span>buyers taken on visits</span></div>
+        <div><b>300+</b><span>exclusive flats ready to show</span></div>
+      </div>
+
+      <figure class="hero-photo">
+        <img src="/assets/hero-1.jpg" alt="A staged Openhouse living room with a sofa, framed art and plants" width="1600" height="900" fetchpriority="high">
+        <figcaption>Every flat is staged before you see it</figcaption>
+      </figure>
+    </div>
+
+    <div class="hero-form" id="book">
+      <div class="card">
+        <h2>Book your visit round</h2>
+        <p class="lede">Tell us what you're looking for. We only show flats we hold exclusively, so the count updates as you choose.</p>
+
+        <form class="form" id="form" novalidate>
+          <div class="field">
+            <label for="city">City</label>
+            <select id="city" required autocomplete="off">
+              <option value="">Select city</option>
+              <option value="gurgaon">Gurgaon</option>
+              <option value="noida">Noida &amp; Greater Noida</option>
+              <option value="ghaziabad">Ghaziabad</option>
+            </select>
+            <div class="err" id="e_city">Choose a city.</div>
+          </div>
+
+          <div class="two">
+            <div class="field">
+              <label for="config">Configuration</label>
+              <select id="config" required>
+                <option value="">Select</option>
+                <option value="2bhk">2 BHK</option>
+                <option value="3bhk">3 BHK</option>
+                <option value="4bhk">4 BHK &amp; above</option>
+              </select>
+              <div class="err" id="e_config">Choose one.</div>
+            </div>
+            <div class="field">
+              <label for="budget">Budget</label>
+              <select id="budget" required>
+                <option value="">Select</option>
+                <option value="0-7500000">Under ₹75 L</option>
+                <option value="7500000-10000000">₹75 L – ₹1 Cr</option>
+                <option value="10000000-15000000">₹1 Cr – ₹1.5 Cr</option>
+                <option value="15000000-25000000">₹1.5 Cr – ₹2.5 Cr</option>
+                <option value="25000000-999900000">Above ₹2.5 Cr</option>
+              </select>
+              <div class="err" id="e_budget">Choose one.</div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="areaSel">Areas <span class="hint">(up to 4, or the whole city)</span></label>
+            <select id="areaSel" disabled><option value="">Select a city first</option></select>
+            <div class="chips" id="areaChips"></div>
+            <div class="err" id="e_area">Pick at least one area.</div>
+          </div>
+
+          <div class="field">
+            <label for="visitWhen">When can you visit?</label>
+            <select id="visitWhen" required>
+              <option value="">Select a time</option>
+              <option value="this-sat">This Saturday</option>
+              <option value="this-sun">This Sunday</option>
+              <option value="next-weekend">Next weekend</option>
+              <option value="weekday-eve">A weekday evening</option>
+              <option value="flexible">Flexible, any time in the next 30 days</option>
+            </select>
+            <div class="err" id="e_when">Tell us when you are free.</div>
+          </div>
+
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" placeholder="As on your ID" autocomplete="name" required>
+            <div class="err" id="e_name">Enter your name.</div>
+          </div>
+
+          <div class="two">
+            <div class="field">
+              <label for="phone">WhatsApp number <span class="hint">(we'll send an OTP)</span></label>
+              <input type="tel" id="phone" placeholder="10-digit mobile" inputmode="numeric" maxlength="10" autocomplete="tel-national" required>
+              <div class="err" id="e_phone">Enter a valid 10-digit number.</div>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="you@email.com" autocomplete="email" required>
+              <div class="err" id="e_email">Enter a valid email.</div>
+            </div>
+          </div>
+
+          <div class="live" id="live" aria-live="polite">
+            <div class="live-top"><i></i><span class="live-t" id="liveText">Fill in city, configuration, budget and area to see matching stock</span></div>
+            <div class="live-sub" id="liveSub" hidden></div>
+          </div>
+
+          <div class="err" id="e_form" role="alert"></div>
+          <button class="btn btn-primary btn-block" type="submit" id="payBtn">Pay ₹990 and book my visits</button>
+          <p class="pay-note"><b>Fully refundable.</b> UPI, cards and netbanking. By continuing you agree to our <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.</p>
+          <div class="rzp">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.8"/></svg>
+            Payments secured by Razorpay
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HONEST ================= -->
+<section class="honest">
+  <div class="wrap">
+    <h2 class="measure">Let's be honest about flat hunting</h2>
+    <div class="honest-body">
+      <p>You enquire once on a portal and eleven people call you within the hour. None of them has the keys to the flat you asked about.</p>
+      <p>The flat in the photo is "just sold". But they have something better, slightly over your budget, in a sector you never mentioned.</p>
+      <p>You take a Sunday off, drive across the city, and see two empty flats that were never in your range. Then the price changes depending on who you ask, and the papers turn out to be a three-month problem.</p>
+      <div class="rule"></div>
+      <p>The reason none of it works: everybody is passing along someone else's flat. Nobody actually owns the responsibility for the price, the papers or the keys.</p>
+      <p class="big">So we stopped passing flats along. We take each one exclusively, fix the price, clean the papers and stage it, before you ever see it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= METHOD ================= -->
+<section class="method">
+  <div class="wrap">
+    <h2 class="measure">We're not a listing site. We're an asset manager.</h2>
+    <p class="lede">A portal shows you flats it has no control over. We take control of the flat first, then show it to you. That difference is the entire page.</p>
+    <div class="stack">
+      <div class="sl s1"><div class="pc">10%</div><div><h3>Seeing the listing</h3><div class="bar"><i style="width:10%"></i></div><p>Where every buyer starts. Anyone can show you a photo. It decides almost nothing.</p></div></div>
+      <div class="sl s2"><div class="pc">30%</div><div><h3>Walking into a home, not a shell</h3><div class="bar"><i style="width:30%"></i></div><p>Each flat is professionally staged before viewing, so you see what it becomes, not dust and bare walls.</p></div></div>
+      <div class="sl s3"><div class="pc">60%</div><div><h3>Owning the flat's mandate, price and paperwork</h3><div class="bar"><i style="width:60%"></i></div><p>We hold it exclusively, negotiate the price with the owner before listing, and clear the title and dues. By the time you arrive, there is nothing left to fight about.</p></div></div>
+    </div>
+    <p class="stack-note">Everyone else sells you the top 10%. We do the 60% first. That's why buying from us takes an afternoon, not six months.</p>
+  </div>
+</section>
+
+<!-- ================= SHOWCASE ================= -->
+<section class="showcase">
+  <div class="wrap">
+    <h2 class="measure">Staged, verified, and exclusively ours</h2>
+    <p class="lede">A sample of what's with us right now. Each one is held exclusively by Openhouse, professionally staged, legally cleared and priced before it reaches you.</p>
+    <div class="rail" id="rail"></div>
+    <p class="rail-note">Sample of current exclusive inventory as listed on openhouse.in. Availability changes daily; prices are subject to change.</p>
+  </div>
+</section>
+
+<!-- ================= COMPARE ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="measure">You have options. Here's how they stack up.</h2>
+    <table class="cmp">
+      <thead><tr><th scope="col"><span class="sr-only">Aspect</span></th><th scope="col">Brokers &amp; portals</th><th scope="col">Openhouse</th></tr></thead>
+      <tbody id="cmpBody"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="measure">How it works</h2>
+    <p class="lede">Four steps. The counter in the form shows how many exclusive flats match before you pay anything.</p>
+    <div class="flow">
+      <div class="fi"><div class="num">1</div><div><h3>Fill one form</h3><p>City, configuration, budget, the areas you actually want, and when you're free. Takes about a minute. We confirm your number with an OTP.</p></div></div>
+      <div class="fi"><div class="num">2</div><div><h3>Pay ₹990</h3><p>Our team contacts you within 24 hours. Your shortlist reaches WhatsApp with each flat's fixed price, staged photos, floor plan and legal status.</p></div></div>
+      <div class="fi"><div class="num">3</div><div><h3>We take you to see all 4–6</h3><p>One Openhouse person, one route, all flats in a single round. We hold the keys, so nothing gets cancelled. Usually 3 to 4 hours.</p></div></div>
+      <div class="fi"><div class="num">4</div><div><h3>You buy one, or you take your money back</h3><p>Found the one? The price is set and the papers are done, so we go straight to agreement and registry. Found nothing? Your ₹990 comes back.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHO ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="measure">Is this for you?</h2>
+    <div class="who-grid" id="whoGrid"></div>
+    <div class="notfor" id="notFor"></div>
+  </div>
+</section>
+
+<!-- ================= VALUE ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="measure">Everything included for ₹990</h2>
+    <div class="vs">
+      <div class="vs-h">Your guaranteed visit round</div>
+      <div id="vsCore"></div>
+      <div class="vs-h" style="border-top:1px solid var(--line)">Included with it</div>
+      <div id="vsBonus"></div>
+      <div class="vs-f">
+        <div class="pp"><span class="m">₹2,990</span><span class="n">₹990</span></div>
+        <small>Refundable. Adjusted against our fee if you buy through us.</small>
+      </div>
+    </div>
+    <button class="btn btn-primary btn-block" data-go style="margin-top:20px">Book my visits for ₹990</button>
+  </div>
+</section>
+
+<!-- ================= PROMISE ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="promise">
+      <h2>Both guarantees, in plain words</h2>
+      <p>We hold the flats, we set the price and we clear the papers, so the only thing left to prove is whether you like the homes. Test us for ₹990, with two ways out that cost you nothing.</p>
+      <div class="two-g">
+        <div class="g">
+          <h3><svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#118D57"/><path d="M4.9 8.2l2.1 2.1 4.2-4.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Visit guarantee</h3>
+          <p>We arrange 4 to 6 visits in your budget and areas. If we can't, your ₹990 is returned before you step out of the house.</p>
+        </div>
+        <div class="g">
+          <h3><svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#FA541C"/><path d="M4.9 8.2l2.1 2.1 4.2-4.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Refund guarantee</h3>
+          <p>See all of them, and if none is worth a second look, reply REFUND on WhatsApp. One message is enough.</p>
+        </div>
+      </div>
+      <ul>
+        <li>Money reaches the same account within 48 hours.</li>
+        <li>No form, no deduction, no "but you didn't see all of them".</li>
+        <li>Ask any time within 30 days of your visit round.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUOTES ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="measure">What buyers say after the visits</h2>
+    <div class="quotes" id="quotes"></div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="measure">Questions, answered</h2>
+    <div class="faq" id="faq"></div>
+  </div>
+</section>
+
+<!-- ================= LAST ================= -->
+<section class="last">
+  <div class="wrap">
+    <h2>Guaranteed 4–6 flats, your weekend, ₹990.</h2>
+    <p>Every home is staged, legally verified and held exclusively by us. Full refund if you don't like any flat.</p>
+    <button class="btn btn-primary" data-go>Book my visits for ₹990</button>
+    <div class="facts">
+      <span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#FA541C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Guaranteed 4–6 visits</span>
+      <span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#FA541C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>300+ exclusive flats</span>
+      <span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#FA541C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>17,932 visits done</span>
+      <span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#FA541C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Refundable within 48 hours</span>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="/assets/logo.png" alt="Openhouse" width="150" height="30">
+        <p>Openhouse is transforming residential resale transactions by making them transparent, hassle-free, and ensuring the best price. We offer complete transaction support, including legal documentation and property registration.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul class="foot-list">
+          <li><a href="https://openhouse.in/about">About Openhouse</a></li>
+          <li><a href="https://openhouse.in/contact">Contact</a></li>
+          <li><a href="/terms">Terms &amp; Conditions</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/refund-policy">Refund Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Reach us</h4>
+        <ul class="foot-list">
+          <li><a href="tel:+918065453090">+91 80654 53090</a></li>
+          <li><a href="mailto:info@openhouse.in">info@openhouse.in</a></li>
+          <li>414-415, 4th Floor, Suncity Success Tower, Golf Course Extension Road, Sector 65, Gurugram, Haryana 122101</li>
+          <li><a href="https://www.instagram.com/openhouse_in/" rel="noopener">Instagram</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/company/openhouse-ind" rel="noopener">LinkedIn</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/@OpenHouse_at" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-note">
+      <p>Openhouse is a property asset management company operating in Gurgaon, Noida and Ghaziabad. Homes shown are held under exclusive mandate from their owners, professionally staged and legally verified prior to viewing. Visit and buyer figures cover the last two years. Availability changes daily. The ₹990 is a refundable booking amount, not a brokerage fee; our standard fee applies only if you buy a home through us, and the ₹990 is adjusted against it. This site is not part of Meta or Facebook.</p>
+      <p>© 2026 "Openhouse" by Avano Technologies Private Limited. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div>
+    <div class="pp"><span class="m">₹2,990</span><span class="n">₹990</span></div>
+    <div class="lab">Guaranteed 4–6 visits, refundable</div>
+  </div>
+  <button class="btn btn-primary" data-go>Book visits</button>
+</div>
+
+<!-- ================= OTP SHEET ================= -->
+<div class="backdrop" id="backdrop" hidden></div>
+<div class="sheet" id="otpSheet" role="dialog" aria-modal="true" aria-labelledby="otpTitle" hidden>
+  <div class="grab"></div>
+  <h2 id="otpTitle">Confirm your number</h2>
+  <p class="to">We've sent a 6-digit code by SMS to <b id="otpPhone"></b>.</p>
+  <input class="otp-in" id="otpInput" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="\d{6}" placeholder="••••••" aria-label="6-digit OTP">
+  <div class="err" id="e_otp"></div>
+  <button class="btn btn-primary btn-block" id="otpBtn" type="button">Verify and pay ₹990</button>
+  <div class="links">
+    <button type="button" id="otpResend" disabled>Resend code in 30s</button>
+    <button type="button" id="otpChange">Change number</button>
+  </div>
+  <p class="fine">Payment opens in Razorpay after verification. Your booking is fully refundable.</p>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* =========================================================================
+   OPENHOUSE — ₹990 GUARANTEED VISITS
+   Flow: form → POST /api/otp/send → OTP sheet → POST /api/otp/verify (creates Razorpay order)
+         → Razorpay Checkout → POST /api/payments/verify → /thank-you
+   MOCK: the "matching stock" counter is simulated until a real inventory API exists.
+   ========================================================================= */
+const OH = { BASE: '/api', MOCK_COUNTER: true, MIN_MATCHES: 6, FEE_LABEL: '₹990' };
+
+const AREAS = {
+  gurgaon: [['sohna-road','Sohna Road (Sec 49–57)'],['golf-course','Golf Course Road'],['gc-ext','Golf Course Ext. (Sec 65–70)'],
+    ['new-ggn','New Gurgaon (Sec 80–95)'],['dwarka-expy','Dwarka Expressway (Sec 99–113)'],['mg-road','MG Road & Sushant Lok'],['palam-vihar','Palam Vihar & Sec 21–23']],
+  noida: [['expressway','Noida Expressway (Sec 137–150)'],['sec-100-110','Sector 100–110'],['sec-74-79','Sector 74–79'],
+    ['gr-noida-west','Greater Noida West'],['sec-44-52','Sector 44–52'],['sec-62-70','Sector 62–70']],
+  ghaziabad: [['indirapuram','Indirapuram'],['vaishali','Vaishali & Vasundhara'],['raj-nagar-ext','Raj Nagar Extension'],['crossings','Crossings Republik'],['nh9','NH-9 & Siddharth Vihar']]
+};
+// MOCK society names used only by the simulated counter.
+const SOC = {
+  'sohna-road':['Vipul Belmonte','Central Park Resorts','Uniworld Gardens'],'golf-course':['DLF Beverly Park','Ridgewood Estate','Central Park 2'],
+  'gc-ext':['Emaar Palm Gardens','M3M Merlin','Ireo Victory Valley'],'new-ggn':['Vatika City Homes','BPTP Astaire','Signature Global Park'],
+  'dwarka-expy':['Sobha City','Puri Emerald Bay','Adani Oyster Grande'],'mg-road':['Hamilton Court','Beverly Park 1','Silver Oaks'],
+  'palam-vihar':['Rosewood City','Suncity Township','Palam Vihar Blocks'],'expressway':['Cleo County','Prateek Edifice','Godrej Golf Links'],
+  'sec-100-110':['Lotus Boulevard','Jaypee Aman','Amrapali Sapphire'],'sec-74-79':['Supertech Capetown','Prateek Wisteria','Arihant Arden'],
+  'gr-noida-west':['Gaur City 2','Panchsheel Greens','Nirala Estate'],'sec-44-52':['Jalvayu Vihar','Eldeco Utopia','Mahagun Maple'],
+  'sec-62-70':['Amrapali Princely','Paras Tierea','Ajnara Daffodil'],'indirapuram':['Gaur Green City','Shipra Krishna Vista','Mahagun Mosaic'],
+  'vaishali':['Vasundhara Enclave','Sunrise Apartments','Sector 9 Blocks'],'raj-nagar-ext':['Charms Castle','KW Srishti','Panchsheel Primrose'],
+  'crossings':['Paramount Symphony','Assotech Windsor','Gaur Saundaryam'],'nh9':['Siddharth Vihar Blocks','Prateek Grand City','Galaxy North Avenue']
+};
+
+const S = { city:'', config:'', budget:'', bmin:0, bmax:0, areas:[], anyArea:false, when:'', count:null, societies:[], bookingId:null, order:null };
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const hash = s => { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return Math.abs(h); };
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+async function api(path, opts = {}) {
+  const r = await fetch(OH.BASE + path, { credentials: 'same-origin', headers: { 'Content-Type': 'application/json', ...(opts.headers || {}) }, ...opts });
+  let data = {}; try { data = await r.json(); } catch {}
+  return { status: r.status, ok: r.ok, data };
+}
+
+function toast(msg, ms = 3200) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove('show'), ms); }
+
+/* ---------------- showcase: real listings from openhouse.in (2026-09-25) ---------------- */
+const SHOWCASE = [
+  ['home-1.jpg','ROF Amaltas','Sector 92, Gurgaon','3 BHK','838 sq ft','₹0.76 Cr'],
+  ['home-2.jpg','Signature The Roselia','Sector 95A, Gurgaon','2 BHK','668 sq ft','₹0.63 Cr'],
+  ['home-3.jpg','Mapsko Paradise','Sector 83, Gurgaon','3 BHK','1,340 sq ft','₹1.43 Cr'],
+  ['home-4.jpg','Adani Aangan','Sector 88A, Gurgaon','2 BHK','840 sq ft','₹0.73 Cr'],
+  ['home-5.jpg','M3M The Marina','Sector 68, Gurgaon','2 BHK','1,223 sq ft','₹1.63 Cr'],
+  ['home-6.jpg','Sare Homes','Sector 92, Gurgaon','3 BHK','1,183 sq ft','₹1.21 Cr'],
+];
+$('#rail').innerHTML = SHOWCASE.map(([img, soc, loc, cfg, area, price]) => `
+  <article class="prop">
+    <div class="prop-img"><img src="/assets/${img}" alt="${esc(cfg)} at ${esc(soc)}, ${esc(loc)}" loading="lazy" width="900" height="675">
+      <span class="badge"><svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="#118D57" stroke-width="1.8"/><path d="M4.9 8.2l2.1 2.1 4.2-4.4" stroke="#118D57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified</span></div>
+    <div class="prop-b"><div class="soc">${esc(soc)}</div><div class="loc">${esc(loc)}</div>
+      <div class="meta"><span>${esc(cfg)}, ${esc(area)}</span><b>${esc(price)}</b></div></div>
+  </article>`).join('');
+
+/* ---------------- areas ---------------- */
+function renderAreas() {
+  const sel = $('#areaSel'), box = $('#areaChips');
+  box.innerHTML = ''; sel.innerHTML = '';
+  if (!S.city) { sel.disabled = true; sel.innerHTML = '<option value="">Select a city first</option>'; return; }
+  sel.disabled = false;
+  sel.innerHTML = '<option value="">Add an area</option>' + AREAS[S.city].map(([id, nm]) => `<option value="${id}">${esc(nm)}</option>`).join('');
+  const any = document.createElement('button');
+  any.type = 'button'; any.className = 'chip any'; any.textContent = 'Anywhere in the city';
+  any.setAttribute('aria-pressed', String(S.anyArea));
+  any.onclick = () => { S.anyArea = !S.anyArea; if (S.anyArea) S.areas = []; renderAreas(); refresh(); fail('area', false); };
+  box.appendChild(any);
+  S.areas.forEach(id => {
+    const nm = (AREAS[S.city].find(a => a[0] === id) || [id, id])[1];
+    const c = document.createElement('button');
+    c.type = 'button'; c.className = 'chip'; c.setAttribute('aria-pressed', 'true'); c.textContent = nm + '  ×'; c.setAttribute('aria-label', 'Remove ' + nm);
+    c.onclick = () => { S.areas = S.areas.filter(x => x !== id); renderAreas(); refresh(); };
+    box.appendChild(c);
+  });
+  if (S.anyArea) sel.innerHTML = '<option value="">Covering the whole city</option>';
+  else if (S.areas.length >= 4) sel.innerHTML = '<option value="">4 areas is the maximum</option>';
+  sel.disabled = S.anyArea || S.areas.length >= 4;
+}
+
+/* ---------------- matching-stock counter (MOCK until inventory API exists) ---------------- */
+function mockSummary(q) {
+  const ids = q.anyArea ? AREAS[q.city].map(a => a[0]) : q.areas;
+  let count = 0, societies = [];
+  ids.forEach(id => {
+    const seed = hash(id + q.config + q.bmin);
+    let n = 2 + (seed % 9);
+    if (q.bmin >= 25000000) n = Math.max(0, n - 5);
+    if (q.config === '4bhk') n = Math.max(0, n - 4);
+    count += n;
+    if (n > 0) { const s = SOC[id] || []; societies.push(s[seed % Math.max(s.length, 1)]); }
+  });
+  return new Promise(r => setTimeout(() => r({ count, societies: societies.filter(Boolean).slice(0, 3) }), 380));
+}
+let timer = null;
+function refresh() {
+  const box = $('#live'), txt = $('#liveText'), sub = $('#liveSub');
+  const ready = S.city && S.config && S.budget && (S.anyArea || S.areas.length);
+  if (!ready) {
+    box.className = 'live'; sub.hidden = true;
+    txt.textContent = S.city ? 'Choose configuration, budget and area to see matching stock' : 'Fill in city, configuration, budget and area to see matching stock';
+    S.count = null; return;
+  }
+  box.className = 'live'; txt.textContent = 'Checking what we have right now…'; sub.hidden = true;
+  clearTimeout(timer);
+  timer = setTimeout(async () => {
+    try {
+      const d = await mockSummary(S);
+      S.count = d.count; S.societies = d.societies || [];
+      if (d.count === 0) {
+        box.className = 'live none'; txt.innerHTML = '<b>Nothing in this exact combination today.</b>';
+        sub.hidden = false; sub.textContent = 'Widen the budget by one band or add another area. Stock changes every week.';
+      } else if (d.count < OH.MIN_MATCHES) {
+        box.className = 'live warn'; txt.innerHTML = `<span class="live-n">${d.count}</span> flats match exactly`;
+        sub.hidden = false; sub.textContent = "We'll make up the rest of your 4–6 from the sectors next door." + (S.societies.length ? ` Including ${S.societies.join(', ')}.` : '');
+      } else {
+        box.className = 'live on'; txt.innerHTML = `<span class="live-n">${d.count}</span> exclusive flats match what you've picked`;
+        sub.hidden = false; sub.textContent = S.societies.length ? `Including ${S.societies.join(', ')}. We'll shortlist the best 4–6 for you.` : "We'll shortlist the best 4–6 for you.";
+      }
+    } catch { box.className = 'live'; sub.hidden = true; txt.textContent = "Stock check unavailable right now. Go ahead, we'll match you manually."; }
+  }, 320);
+}
+
+/* ---------------- validation + events ---------------- */
+function fail(id, on, msg) {
+  const e = $('#e_' + id); if (msg) e.textContent = msg;
+  e.classList.toggle('show', on);
+  const f = $('#' + ({ area: 'areaSel', when: 'visitWhen' }[id] || id)); if (f) f.classList.toggle('invalid', on);
+  return !on;
+}
+$('#city').onchange = e => { S.city = e.target.value; S.areas = []; S.anyArea = false; renderAreas(); refresh(); fail('city', !S.city); };
+$('#config').onchange = e => { S.config = e.target.value; refresh(); fail('config', !S.config); };
+$('#budget').onchange = e => { S.budget = e.target.value; const [a, b] = (S.budget || '0-0').split('-').map(Number); S.bmin = a; S.bmax = b; refresh(); fail('budget', !S.budget); };
+$('#areaSel').onchange = e => { const v = e.target.value; if (v && !S.areas.includes(v) && S.areas.length < 4) { S.areas.push(v); S.anyArea = false; } renderAreas(); refresh(); fail('area', false); };
+$('#visitWhen').onchange = e => { S.when = e.target.value; fail('when', !S.when); };
+$('#phone').oninput = e => { e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10); };
+$$('[data-go]').forEach(b => b.onclick = () => {
+  document.getElementById('book').scrollIntoView({ block: 'start' });
+  setTimeout(() => { if (!S.city) $('#city').focus({ preventScroll: true }); }, 450);
+});
+
+const payBtn = $('#payBtn'), PAY_LABEL = payBtn.textContent;
+function busy(btn, on, label) { btn.disabled = on; btn.innerHTML = on ? `<span class="spin" aria-hidden="true"></span> ${esc(label)}` : esc(label); }
+
+function formPayload() {
+  return {
+    name: $('#name').value.trim(), phone: $('#phone').value.replace(/\D/g, ''), email: $('#email').value.trim(),
+    city: S.city, configuration: S.config, budget: S.budget, areas: S.anyArea ? 'any' : S.areas, visit_when: S.when,
+    utm: Object.fromEntries(new URLSearchParams(location.search)), page_url: location.href, referrer: document.referrer,
+  };
+}
+
+$('#form').onsubmit = async e => {
+  e.preventDefault();
+  const p = formPayload();
+  let ok = true;
+  ok = fail('city', !S.city) && ok;
+  ok = fail('config', !S.config) && ok;
+  ok = fail('budget', !S.budget) && ok;
+  ok = fail('area', !(S.anyArea || S.areas.length)) && ok;
+  ok = fail('when', !S.when) && ok;
+  ok = fail('name', p.name.length < 2) && ok;
+  ok = fail('phone', !/^[6-9]\d{9}$/.test(p.phone)) && ok;
+  ok = fail('email', !/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(p.email)) && ok;
+  if (!ok) { $('.invalid')?.scrollIntoView({ block: 'center' }); return; }
+  $('#e_form').classList.remove('show');
+  await sendOtp(p);
+};
+
+/* ---------------- OTP ---------------- */
+let resendTimer = null, resendAt = 0;
+async function sendOtp(p, { resend = false } = {}) {
+  const btn = resend ? $('#otpResend') : payBtn;
+  if (!resend) busy(payBtn, true, 'Sending OTP…');
+  try {
+    const r = await api('/otp/send', { method: 'POST', body: JSON.stringify(p) });
+    if (!r.ok) {
+      if (r.data.errors) { Object.entries(r.data.errors).forEach(([k, m]) => fail({ configuration: 'config', visit_when: 'when', areas: 'area' }[k] || k, true, m)); $('.invalid')?.scrollIntoView({ block: 'center' }); }
+      else { const el = $('#e_form'); el.textContent = r.data.error || 'Something went wrong. Please try again.'; el.classList.add('show'); if (resend) toast(el.textContent); }
+      return;
+    }
+    S.bookingId = r.data.booking_id;
+    $('#otpPhone').textContent = r.data.phone_masked || p.phone;
+    openSheet();
+    startResendTimer(r.data.resend_after || 30);
+    if (r.data.dev_otp) { $('#otpInput').value = r.data.dev_otp; toast('Dev mode: OTP auto-filled'); }
+    if (resend) toast('A new code is on its way.');
+  } catch { const el = $('#e_form'); el.textContent = 'Check your connection and try again.'; el.classList.add('show'); }
+  finally { if (!resend) busy(payBtn, false, PAY_LABEL); }
+}
+function startResendTimer(secs) {
+  const b = $('#otpResend'); clearInterval(resendTimer); resendAt = Date.now() + secs * 1000;
+  const tick = () => { const left = Math.ceil((resendAt - Date.now()) / 1000); if (left > 0) { b.disabled = true; b.textContent = `Resend code in ${left}s`; } else { clearInterval(resendTimer); b.disabled = false; b.textContent = 'Resend code'; } };
+  tick(); resendTimer = setInterval(tick, 500);
+}
+function openSheet() {
+  const bd = $('#backdrop'), sh = $('#otpSheet');
+  bd.hidden = false; sh.hidden = false; $('#otpInput').value = ''; $('#otpInput').classList.remove('invalid'); $('#e_otp').classList.remove('show');
+  requestAnimationFrame(() => { bd.classList.add('show'); sh.classList.add('show'); });
+  setTimeout(() => $('#otpInput').focus(), 350);
+  document.addEventListener('keydown', escClose);
+}
+function closeSheet() {
+  const bd = $('#backdrop'), sh = $('#otpSheet');
+  bd.classList.remove('show'); sh.classList.remove('show');
+  setTimeout(() => { bd.hidden = true; sh.hidden = true; }, 320);
+  document.removeEventListener('keydown', escClose);
+}
+function escClose(e) { if (e.key === 'Escape') closeSheet(); }
+$('#backdrop').onclick = closeSheet;
+$('#otpChange').onclick = () => { closeSheet(); setTimeout(() => $('#phone').focus(), 340); };
+$('#otpResend').onclick = () => sendOtp(formPayload(), { resend: true });
+$('#otpInput').oninput = e => { e.target.value = e.target.value.replace(/\D/g, '').slice(0, 6); e.target.classList.remove('invalid'); $('#e_otp').classList.remove('show'); if (e.target.value.length === 6) verifyOtp(); };
+$('#otpInput').onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); verifyOtp(); } };
+$('#otpBtn').onclick = verifyOtp;
+
+async function verifyOtp() {
+  const otp = $('#otpInput').value;
+  const err = $('#e_otp');
+  if (otp.length !== 6) { err.textContent = 'Enter the 6-digit code.'; err.classList.add('show'); $('#otpInput').classList.add('invalid'); return; }
+  const btn = $('#otpBtn'); if (btn.disabled) return;
+  busy(btn, true, 'Verifying…');
+  try {
+    const r = await api('/otp/verify', { method: 'POST', body: JSON.stringify({ booking_id: S.bookingId, otp }) });
+    if (!r.ok) {
+      err.textContent = r.data.error || 'Could not verify. Try again.'; err.classList.add('show'); $('#otpInput').classList.add('invalid');
+      if (r.status === 410 || r.status === 429) { $('#otpResend').disabled = false; $('#otpResend').textContent = 'Resend code'; clearInterval(resendTimer); }
+      return;
+    }
+    S.order = r.data;
+    if (window.fbq) fbq('track', 'InitiateCheckout', { value: 990, currency: 'INR' });
+    if (window.gtag) gtag('event', 'begin_checkout', { value: 990, currency: 'INR' });
+    await openRazorpay(r.data);
+  } catch { err.textContent = 'Check your connection and try again.'; err.classList.add('show'); }
+  finally { busy(btn, false, 'Verify and pay ₹990'); }
+}
+
+/* ---------------- Razorpay ---------------- */
+function loadRazorpay() {
+  if (window.Razorpay) return Promise.resolve();
+  return new Promise((res, rej) => { const s = document.createElement('script'); s.src = 'https://checkout.razorpay.com/v1/checkout.js'; s.onload = res; s.onerror = () => rej(new Error('checkout')); document.head.appendChild(s); });
+}
+async function openRazorpay(order) {
+  if (!order.key_id) { toast('Payments are not enabled yet. Our team will contact you.', 5000); return; }
+  try { await loadRazorpay(); } catch { toast('Could not load the payment window. Check your connection.'); return; }
+  closeSheet();
+  const rzp = new Razorpay({
+    key: order.key_id, amount: order.amount, currency: order.currency, order_id: order.order_id,
+    name: 'Openhouse', description: 'Refundable booking: 4–6 verified flat visits', image: location.origin + '/assets/logo-mark.png',
+    prefill: order.prefill, notes: { booking_id: order.booking_id }, theme: { color: '#FA541C' },
+    handler: resp => confirmPayment(resp),
+    modal: { ondismiss: () => { toast('Payment not completed. Your details are saved; tap Pay to try again.', 4500); busy(payBtn, false, PAY_LABEL); } },
+    retry: { enabled: true },
+  });
+  rzp.on('payment.failed', r => { toast('Payment failed: ' + ((r.error && r.error.description) || 'please try another method.'), 5000); });
+  busy(payBtn, true, 'Complete payment in the Razorpay window…');
+  rzp.open();
+}
+async function confirmPayment(resp) {
+  busy(payBtn, true, 'Confirming payment…');
+  try {
+    const r = await api('/payments/verify', { method: 'POST', body: JSON.stringify({ order_id: resp.razorpay_order_id, payment_id: resp.razorpay_payment_id, signature: resp.razorpay_signature }) });
+    if (!r.ok) { toast(r.data.error || 'We could not confirm the payment. If money was deducted, our team will confirm it shortly.', 6000); busy(payBtn, false, PAY_LABEL); return; }
+    if (window.fbq) fbq('track', 'Purchase', { value: 990, currency: 'INR' });
+    if (window.gtag) gtag('event', 'purchase', { value: 990, currency: 'INR', transaction_id: resp.razorpay_payment_id });
+    location.href = r.data.redirect || '/thank-you';
+  } catch { toast('We could not confirm the payment. If money was deducted, our team will confirm it shortly.', 6000); busy(payBtn, false, PAY_LABEL); }
+}
+
+/* ---------------- content ---------------- */
+const CMP = [
+  ['Who holds the flat', "A broker forwarding someone else's listing", 'Openhouse, exclusively. We are the only party you deal with'],
+  ['The price', 'Changes depending on who you ask', 'Already negotiated with the owner before listing. Fixed'],
+  ['What you walk into', 'An empty, dusty flat you have to imagine', 'A professionally staged home you can picture living in'],
+  ['The paperwork', 'Your problem, found out three months later', 'Title, chain and dues legally verified before you see it'],
+  ['Talking to the owner', 'Endless rounds, through a middleman', 'Never. Everything sits with us'],
+  ['Your Sunday', 'Two flats, one of them wrong', '4–6 flats in a single planned round'],
+  ['If nothing fits', 'Start again next weekend', '₹990 back in 48 hours, no conditions'],
+];
+$('#cmpBody').innerHTML = CMP.map(([k, a, b]) => `<tr><td>${esc(k)}</td><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('');
+
+const WHO = [
+  ['First-time buyers', "You've saved up, you're ready, and you have no idea which of 40 societies is actually worth your money.", "You'll see homes that are already priced, staged and legally clean."],
+  ['Families upgrading', "You need a bigger home in the same schools' catchment, and you can't afford to waste weekends.", 'One round, all the options in your sector, real prices.'],
+  ['NRIs and out-of-city buyers', 'You fly in for a week and lose four days to brokers who show you the wrong things.', 'A full visit round planned before you land.'],
+  ['Investors', 'You want clean papers and a price that holds, not a pitch about the clubhouse.', 'Title, encumbrance and dues cleared before the flat reaches your list.'],
+];
+$('#whoGrid').innerHTML = WHO.map(([t, d, a]) => `<div class="wc"><h3>${esc(t)}</h3><p>${esc(d)}</p><div class="after">${esc(a)}</div></div>`).join('');
+const NOTFOR = [
+  "You want to browse listings from your sofa. That's what portals are for.",
+  "You're buying 12 months from now and just exploring.",
+  'You want an under-construction or builder project. We only do resale.',
+  "You can't give us one block of 3–4 hours in the next 30 days.",
+];
+$('#notFor').innerHTML = '<h3>This is not for you if</h3>' + NOTFOR.map(t => `<div><span class="x">×</span><span>${esc(t)}</span></div>`).join('');
+
+const VS_CORE = [
+  ['Guaranteed 4–6 exclusive Openhouse homes', 'Not forwarded listings. Every flat on your list is held exclusively by us, so nothing is "just sold" when you arrive.'],
+  ['A fixed price, already negotiated', 'We settle the number with the owner before the flat is ever listed. What you see is the price. No haggling, no games.'],
+  ['Professionally staged flats', 'Furnished and photographed before viewing, so you walk into a home instead of an empty shell.'],
+  ['All of them in one weekend round', 'We hold the keys and plan the route. You give us one weekend, not six.'],
+];
+const VS_BONUS = [
+  ['Legal verification already done', 'Title, chain of ownership, encumbrance and society dues cleared before the flat reaches your list.'],
+  ['You never deal with an owner', 'Openhouse is the single counterparty for the price, the documents and the handover.'],
+  ['Agreement, registry and loan support', 'Our team runs the paperwork, bank coordination and registry end to end.'],
+  ['Full refund if none of them work', 'Reply REFUND on WhatsApp. Money back in 48 hours, no conditions.'],
+];
+const vsHTML = (t, d, c) => `<div class="vi"><svg width="24" height="24" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7.25" fill="${c}"/><path d="M4.9 8.2l2.1 2.1 4.2-4.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>${esc(t)}</b><p>${esc(d)}</p></div></div>`;
+$('#vsCore').innerHTML = VS_CORE.map(([t, d]) => vsHTML(t, d, '#1A1F2C')).join('');
+$('#vsBonus').innerHTML = VS_BONUS.map(([t, d]) => vsHTML(t, d, '#FA541C')).join('');
+
+// Real customer stories from openhouse.in
+const QUOTES = [
+  ['customer-1.webp', 'Harsh and Vinita', 'Bought in New Gurgaon', "Finding a home can be incredibly challenging. We aimed to buy in New Gurgaon, and after connecting online with various brokers and going on multiple visits, we still couldn't decide. Openhouse stepped in and clarified our specific needs, showing us only homes that truly matched our preferences. The fully furnished and well-lit homes made viewing enjoyable. We simply signed the agreement, and everything else was handled smoothly by their team."],
+  ['customer-2.webp', 'Nishant and Ashi', 'Found a home in two weeks', "A friend recommended Openhouse to me. They were clear and upfront, taking the time to understand my exact requirements. Within just two weeks, they reached out saying they'd found a home that matched my specifications perfectly. I'd been looking on my own for months without success. The entire buying process was smooth and professional, with regular updates along the way."],
+  ['customer-3.webp', 'Akshay and Tanya', 'Bought after a year of searching', "I'd been on the hunt for a new home for nearly a year but couldn't find anything that felt right or was worth the price. Openhouse showed me homes that were beautifully staged and designed to feel welcoming, making the decision so much easier. Within two months they located a place that met all my needs, and their team handled all the paperwork and formalities."],
+  ['customer-4.jpeg', 'Sanjay Rastogi', 'Group Head, Corporate Finance at Olam Agri', "It was truly a pleasure. Everyone was very thorough, responsive, and professional throughout the process. I really appreciate the attention to detail and the smooth way everything was handled. I would certainly recommend Openhouse to my friends and contacts."],
+];
+$('#quotes').innerHTML = QUOTES.map(([img, who, sub, text]) => `<div class="q"><p>“${esc(text)}”</p><div class="who"><img src="/assets/${img}" alt="" loading="lazy" width="44" height="44"><div><b>${esc(who)}</b><span>${esc(sub)}</span></div></div></div>`).join('');
+
+const FAQ = [
+  ['What exactly is guaranteed for ₹990?', 'Two things. First, 4 to 6 visits to flats that match the budget, configuration and areas you selected. If we cannot put 4 together, we return your ₹990 before you travel anywhere. Second, if you see them all and like none, you get a full refund.'],
+  ['What does "exclusive" actually mean?', 'Openhouse signs an exclusive mandate with the owner before a flat goes live. We hold the keys, we set the price with them, we get the flat staged and we complete the legal checks. No other broker can show you that flat, and nothing is "just sold" when you turn up.'],
+  ['Is the price negotiable?', 'It is already negotiated. We settle the number with the owner before the flat is listed, so what you see is the closing price, not a starting point. That is why buying from us takes days rather than months of back-and-forth.'],
+  ['Do I have to deal with the owner at all?', 'No. Openhouse is your single counterparty for the price, the documents, the handover and the registry. Most of our buyers never meet the owner until the registry, and many never at all.'],
+  ['Why should I pay anything just to see flats?', 'Because it changes what you get. We block a person for your search, plan a route around your free time and open 4–6 flats we hold the keys to. Buyers who pay get a planned visit round instead of a phone number and a maybe. And if it doesn\'t work out, the money comes back.'],
+  ["What if I don't like any of the flats?", 'Reply REFUND on WhatsApp. Your ₹990 is returned within 48 hours. No form, no deduction, no explanation needed from you.'],
+  ['Do I pay brokerage on top if I buy?', 'Yes, our standard fee applies when the deal closes, and the ₹990 is adjusted into it. So if you buy through us, the booking amount costs you nothing.'],
+  ['Are these builder flats or resale?', 'Resale only. Ready homes in existing societies, held exclusively by Openhouse, staged and legally verified before you see them.'],
+  ["What if you don't have 6 flats in my budget and area?", 'The counter in the form tells you before you pay. If stock is thin we fill the round from the sectors next door, and if there is genuinely nothing in our exclusive inventory, we say so and you don\'t pay.'],
+  ['How soon can I visit?', 'Pick this weekend and we confirm your slot the same day. All 4–6 flats are covered in one round, usually 3 to 4 hours.'],
+  ['Will I be called again and again?', 'No. One call to confirm the flats and your slot. Everything else comes on WhatsApp.'],
+  ['Is my number going to be sold to other brokers?', 'No. Your details stay with Openhouse and are used only to arrange your visits.'],
+];
+$('#faq').innerHTML = FAQ.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('');
+
+/* ---------------- the one orchestrated moment: the price ---------------- */
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const priceBlock = $('#priceBlock');
+new IntersectionObserver(([en], o) => {
+  if (!en.isIntersecting) return; o.disconnect();
+  priceBlock.classList.add('go');
+  const el = $('#nowPrice'); if (REDUCED) { el.textContent = '₹990'; return; }
+  const t0 = performance.now() + 380;
+  (function step(now) { const k = Math.min(1, Math.max(0, (now - t0) / 800)); const e = 1 - Math.pow(1 - k, 3); el.textContent = '₹' + Math.round(2990 + (990 - 2990) * e).toLocaleString('en-IN'); if (k < 1) requestAnimationFrame(step); })(performance.now());
+}, { threshold: .4 }).observe(priceBlock);
+
+/* sticky bar: show once the booking form has scrolled out of view */
+const bookEl = $('#book');
+new IntersectionObserver(([en]) => { $('#sticky').classList.toggle('show', !en.isIntersecting && en.boundingClientRect.top < 0); }, { threshold: 0.05 }).observe(bookEl);
+
+renderAreas();
+</script>
+</body>
+</html>

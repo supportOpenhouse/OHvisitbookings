@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thank you, your visits are booked | Openhouse</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+.ty{padding:48px 0 80px}
+.ty .wrap{max-width:720px}
+.ty-head{display:flex;align-items:flex-start;gap:16px}
+.ty-head .ok{flex:none;width:52px;height:52px;border-radius:50%;background:var(--ok-soft);display:grid;place-items:center}
+.ty h1{font-size:clamp(30px,4.6vw,46px)}
+.ty .lede{font-size:18px;margin-top:12px}
+.next{margin-top:36px;background:var(--paper-warm);border:1px solid var(--line);border-radius:var(--radius-l);padding:24px 22px}
+@media (min-width:640px){.next{padding:32px}}
+.next h2{font-size:22px}
+.steps{display:grid;gap:18px;margin-top:18px}
+.step{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px}
+.step .n{width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px}
+.step b{display:block;font-size:16px}
+.step p{margin-top:4px;color:var(--ink-2);font-size:15px}
+.summary{margin-top:28px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.summary .h{padding:12px 18px;background:var(--paper-soft);font-weight:700;font-size:14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}
+.summary .h span{font-weight:500;color:var(--muted)}
+.srow{display:flex;justify-content:space-between;gap:16px;padding:12px 18px;border-bottom:1px solid var(--line);font-size:15px}
+.srow:last-child{border-bottom:0}
+.srow span:first-child{color:var(--muted)}
+.srow span:last-child{font-weight:600;text-align:right}
+.help{margin-top:28px;display:grid;gap:12px}
+@media (min-width:560px){.help{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.help a{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:var(--radius);padding:16px;text-decoration:none;font-weight:600;transition:border-color var(--dur) var(--ease-out)}
+.help a:hover{border-color:var(--ink)}
+.help a span{display:block;font-weight:400;font-size:13px;color:var(--muted);margin-top:2px}
+.refund{margin-top:28px;font-size:14px;color:var(--muted);max-width:60ch}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Openhouse home"><img src="/assets/logo.png" alt="Openhouse" width="140" height="28"></a>
+    <div class="head-right">
+      <a class="head-phone" href="tel:+918065453090">+91 80654 53090</a>
+    </div>
+  </div>
+</header>
+<main class="ty">
+  <div class="wrap">
+    <div class="ty-head">
+      <div class="ok"><svg width="26" height="26" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#118D57" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div>
+        <h1 id="title">Thank you, your visits are booked.</h1>
+        <p class="lede" id="lede">Payment received. Our team will contact you within 24 hours to confirm your flats and your visit slot.</p>
+      </div>
+    </div>
+
+    <div class="next">
+      <h2>What happens next</h2>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div><b>We call you within 24 hours</b><p>An Openhouse advisor confirms your requirements and your preferred time.</p></div></div>
+        <div class="step"><div class="n">2</div><div><b>Your shortlist arrives on WhatsApp</b><p>4–6 exclusive flats with fixed prices, staged photos, floor plans and legal status.</p></div></div>
+        <div class="step"><div class="n">3</div><div><b>One planned visit round</b><p>One Openhouse person, one route, all flats in a single round. We hold the keys.</p></div></div>
+      </div>
+    </div>
+
+    <div class="summary" id="summary" hidden>
+      <div class="h">Booking summary <span id="ref"></span></div>
+      <div id="rows"></div>
+    </div>
+
+    <div class="help">
+      <a href="https://wa.me/918065453090" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3z" stroke="#118D57" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1a4 4 0 0 1-2-2l1-1-1-2L9 8.5z" fill="#118D57"/></svg><div>WhatsApp us<span>+91 80654 53090</span></div></a>
+      <a href="mailto:info@openhouse.in"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#1A1F2C" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="#1A1F2C" stroke-width="1.8"/></svg><div>Email us<span>info@openhouse.in</span></div></a>
+    </div>
+
+    <p class="refund">Changed your mind after seeing them all? Reply REFUND on WhatsApp. Your ₹990 is back in the same account within 48 hours, no questions asked.</p>
+  </div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="/assets/logo.png" alt="Openhouse" width="150" height="30">
+        <p>Openhouse is transforming residential resale transactions by making them transparent, hassle-free, and ensuring the best price. We offer complete transaction support, including legal documentation and property registration.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul class="foot-list">
+          <li><a href="https://openhouse.in/about">About Openhouse</a></li>
+          <li><a href="https://openhouse.in/contact">Contact</a></li>
+          <li><a href="/terms">Terms &amp; Conditions</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/refund-policy">Refund Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Reach us</h4>
+        <ul class="foot-list">
+          <li><a href="tel:+918065453090">+91 80654 53090</a></li>
+          <li><a href="mailto:info@openhouse.in">info@openhouse.in</a></li>
+          <li>414-415, 4th Floor, Suncity Success Tower, Golf Course Extension Road, Sector 65, Gurugram, Haryana 122101</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-note"><p>© 2026 "Openhouse" by Avano Technologies Private Limited. All rights reserved.</p></div>
+  </div>
+</footer>
+<script>
+(async () => {
+  try {
+    const r = await fetch('/api/bookings/me', { credentials: 'same-origin' });
+    if (!r.ok) return;
+    const { booking: b } = await r.json();
+    if (!b) return;
+    if (b.first_name) document.getElementById('title').textContent = b.first_name + ', your visits are booked.';
+    if (b.status !== 'paid') document.getElementById('lede').textContent = 'We have your details. Our team will contact you within 24 hours.';
+    const rows = [['Name', b.name], ['WhatsApp number', b.phone_masked], ['City', b.city], ['Configuration', b.configuration], ['Budget', b.budget], ['Areas', b.areas], ['Visiting', b.visit_when], ['Paid', b.status === 'paid' ? b.amount : 'Pending']];
+    document.getElementById('rows').innerHTML = rows.filter(([, v]) => v).map(([k, v]) => '<div class="srow"><span>' + k + '</span><span>' + String(v).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])) + '</span></div>').join('');
+    document.getElementById('ref').textContent = 'Ref ' + b.ref;
+    document.getElementById('summary').hidden = false;
+  } catch {}
+})();
+</script>
+</body>
+</html>
