@@ -79,12 +79,33 @@
 .err.show{display:block}
 .two{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
 @media (min-width:440px){.two{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.chips:empty{display:none}
-.chip{border:1.5px solid var(--line-strong);background:var(--paper);border-radius:999px;padding:7px 13px;font-size:14px;font-weight:500;cursor:pointer;
-  transition:border-color var(--dur) var(--ease-out),background var(--dur) var(--ease-out)}
-.chip[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:#fff}
-.chip.any[aria-pressed="false"]{border-style:dashed}
+.two .field{display:flex;flex-direction:column}
+.two .field label{margin-top:auto}
+.phone-wrap{position:relative}
+.phone-wrap span{position:absolute;left:14px;top:0;bottom:0;display:flex;align-items:center;color:var(--ink-2);font-weight:500;pointer-events:none}
+.phone-wrap input{padding-left:50px}
+
+/* multi-select dropdown (areas) */
+.ms{position:relative}
+.ms-btn{width:100%;text-align:left;border:1.5px solid var(--line-strong);border-radius:10px;background:var(--paper);padding:13px 40px 13px 14px;
+  font-size:16px;line-height:1.3;cursor:pointer;transition:border-color var(--dur) var(--ease-out),box-shadow var(--dur) var(--ease-out);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%233A404B' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center}
+.ms-btn:disabled{color:var(--muted);background-color:var(--paper-soft);cursor:default}
+.ms-btn[aria-expanded="true"],.ms-btn:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(250,84,28,.16)}
+.ms-btn.invalid{border-color:var(--accent-ink);background-color:#FFF7F5}
+.ms-val{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ms-panel{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:30;background:var(--paper);border:1px solid var(--line-strong);border-radius:12px;
+  box-shadow:var(--shadow-lift);padding:6px;max-height:320px;overflow:auto}
+.ms .ms-opt{display:flex;align-items:center;gap:12px;margin:0;padding:11px 10px;border-radius:8px;font-size:15px;font-weight:500;line-height:1.35;cursor:pointer;user-select:none}
+.ms .ms-opt:hover{background:var(--paper-soft)}
+.ms .ms-opt input{width:18px;height:18px;accent-color:var(--accent);margin:0;flex:none}
+.ms .ms-opt.any{font-weight:600}
+.ms .ms-opt.off{opacity:.45;cursor:default}
+.ms-sep{height:1px;background:var(--line);margin:4px 6px}
+.ms-foot{position:sticky;bottom:-6px;display:flex;justify-content:space-between;align-items:center;gap:10px;margin:4px -6px -6px;padding:10px 16px;
+  background:var(--paper);border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.ms-done{border:0;background:var(--ink);color:#fff;border-radius:8px;padding:8px 16px;font-weight:600;font-size:14px;cursor:pointer}
 .live{border:1px solid var(--line);border-radius:12px;padding:13px 15px;background:var(--paper-soft);font-size:14px;color:var(--muted);transition:background var(--dur) var(--ease-out)}
 .live-top{display:flex;align-items:flex-start;gap:10px}
 .live i{flex:none;width:9px;height:9px;border-radius:50%;background:#C4CAD3;margin-top:6px}
@@ -222,7 +243,33 @@ body{padding-bottom:84px}
   padding:12px 16px;border-radius:12px;font-size:14px;max-width:calc(100% - 40px);opacity:0;transition:opacity var(--dur) var(--ease-out),transform var(--dur) var(--ease-out);pointer-events:none}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 @media (min-width:980px){.toast{bottom:32px}}
+.overlay{position:fixed;inset:0;z-index:120;background:rgba(255,255,255,.97);display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:24px;opacity:0;pointer-events:none;transition:opacity .2s var(--ease-out)}
+.overlay[hidden]{display:none}
+.overlay.show{opacity:1;pointer-events:auto}
+.overlay .box{max-width:360px}
+.overlay .ring{width:56px;height:56px;border:4px solid var(--accent-soft);border-top-color:var(--accent);border-radius:50%;margin:0 auto 20px;animation:spin .9s linear infinite}
+.overlay h2{font-size:22px}
+.overlay p{margin-top:10px;color:var(--ink-2)}
+.overlay .warn{margin-top:16px;font-weight:600;color:var(--accent-ink)}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1437792258100227');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1437792258100227&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -319,9 +366,11 @@ body{padding-bottom:84px}
           </div>
 
           <div class="field">
-            <label for="areaSel">Areas <span class="hint">(up to 4, or the whole city)</span></label>
-            <select id="areaSel" disabled><option value="">Select a city first</option></select>
-            <div class="chips" id="areaChips"></div>
+            <label for="areaBtn">Areas <span class="hint">(up to 4, or the whole city)</span></label>
+            <div class="ms" id="areaMs">
+              <button type="button" class="ms-btn" id="areaBtn" aria-haspopup="listbox" aria-expanded="false" disabled><span class="ms-val" id="areaVal">Select a city first</span></button>
+              <div class="ms-panel" id="areaPanel" hidden></div>
+            </div>
             <div class="err" id="e_area">Pick at least one area.</div>
           </div>
 
@@ -346,8 +395,8 @@ body{padding-bottom:84px}
 
           <div class="two">
             <div class="field">
-              <label for="phone">WhatsApp number <span class="hint">(we'll send an OTP)</span></label>
-              <input type="tel" id="phone" placeholder="10-digit mobile" inputmode="numeric" maxlength="10" autocomplete="tel-national" required>
+              <label for="phone">WhatsApp number <span class="hint">(for OTP)</span></label>
+              <div class="phone-wrap"><span aria-hidden="true">+91</span><input type="tel" id="phone" placeholder="10-digit mobile" inputmode="numeric" maxlength="10" autocomplete="tel-national" required></div>
               <div class="err" id="e_phone">Enter a valid 10-digit number.</div>
             </div>
             <div class="field">
@@ -507,6 +556,14 @@ body{padding-bottom:84px}
   <p class="fine">Payment opens in Razorpay after verification. Your booking is fully refundable.</p>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="overlay" id="payOverlay" role="alertdialog" aria-modal="true" aria-labelledby="ovTitle" hidden>
+  <div class="box">
+    <div class="ring" aria-hidden="true"></div>
+    <h2 id="ovTitle">Confirming your payment</h2>
+    <p>This takes a few seconds.</p>
+    <p class="warn">Please don't refresh or close this page.</p>
+  </div>
+</div>
 
 <script>
 /* =========================================================================
@@ -567,29 +624,44 @@ $('#rail').innerHTML = SHOWCASE.map(([img, soc, loc, cfg, area, price]) => `
       <div class="meta"><span>${esc(cfg)}, ${esc(area)}</span><b>${esc(price)}</b></div></div>
   </article>`).join('');
 
-/* ---------------- areas ---------------- */
-function renderAreas() {
-  const sel = $('#areaSel'), box = $('#areaChips');
-  box.innerHTML = ''; sel.innerHTML = '';
-  if (!S.city) { sel.disabled = true; sel.innerHTML = '<option value="">Select a city first</option>'; return; }
-  sel.disabled = false;
-  sel.innerHTML = '<option value="">Add an area</option>' + AREAS[S.city].map(([id, nm]) => `<option value="${id}">${esc(nm)}</option>`).join('');
-  const any = document.createElement('button');
-  any.type = 'button'; any.className = 'chip any'; any.textContent = 'Anywhere in the city';
-  any.setAttribute('aria-pressed', String(S.anyArea));
-  any.onclick = () => { S.anyArea = !S.anyArea; if (S.anyArea) S.areas = []; renderAreas(); refresh(); fail('area', false); };
-  box.appendChild(any);
-  S.areas.forEach(id => {
-    const nm = (AREAS[S.city].find(a => a[0] === id) || [id, id])[1];
-    const c = document.createElement('button');
-    c.type = 'button'; c.className = 'chip'; c.setAttribute('aria-pressed', 'true'); c.textContent = nm + '  ×'; c.setAttribute('aria-label', 'Remove ' + nm);
-    c.onclick = () => { S.areas = S.areas.filter(x => x !== id); renderAreas(); refresh(); };
-    box.appendChild(c);
-  });
-  if (S.anyArea) sel.innerHTML = '<option value="">Covering the whole city</option>';
-  else if (S.areas.length >= 4) sel.innerHTML = '<option value="">4 areas is the maximum</option>';
-  sel.disabled = S.anyArea || S.areas.length >= 4;
+/* ---------------- areas: multi-select dropdown ---------------- */
+const MAX_AREAS = 4;
+const areaBtn = $('#areaBtn'), areaPanel = $('#areaPanel'), areaVal = $('#areaVal');
+function areaLabel() {
+  if (!S.city) return 'Select a city first';
+  const cityNm = { gurgaon: 'Gurgaon', noida: 'Noida & Greater Noida', ghaziabad: 'Ghaziabad' }[S.city];
+  if (S.anyArea) return 'Anywhere in ' + cityNm;
+  if (!S.areas.length) return 'Select areas';
+  return S.areas.map(id => (AREAS[S.city].find(a => a[0] === id) || [id, id])[1]).join(', ');
 }
+function renderAreas() {
+  areaBtn.disabled = !S.city;
+  areaVal.textContent = areaLabel();
+  if (!S.city) { closeAreas(); areaPanel.innerHTML = ''; return; }
+  const cityNm = { gurgaon: 'Gurgaon', noida: 'Noida & Greater Noida', ghaziabad: 'Ghaziabad' }[S.city];
+  const full = !S.anyArea && S.areas.length >= MAX_AREAS;
+  areaPanel.innerHTML =
+    `<label class="ms-opt any"><input type="checkbox" value="any" ${S.anyArea ? 'checked' : ''}>Anywhere in ${esc(cityNm)}</label><div class="ms-sep"></div>` +
+    AREAS[S.city].map(([id, nm]) => {
+      const on = S.areas.includes(id);
+      const off = S.anyArea || (full && !on);
+      return `<label class="ms-opt ${off ? 'off' : ''}"><input type="checkbox" value="${id}" ${on ? 'checked' : ''} ${off ? 'disabled' : ''}>${esc(nm)}</label>`;
+    }).join('') +
+    `<div class="ms-foot"><span>${S.anyArea ? 'Whole city' : S.areas.length + ' of ' + MAX_AREAS + ' selected'}</span><button type="button" class="ms-done">Done</button></div>`;
+}
+function openAreas() { if (areaBtn.disabled) return; renderAreas(); areaPanel.hidden = false; areaBtn.setAttribute('aria-expanded', 'true'); }
+function closeAreas() { areaPanel.hidden = true; areaBtn.setAttribute('aria-expanded', 'false'); }
+areaBtn.onclick = () => (areaPanel.hidden ? openAreas() : closeAreas());
+areaPanel.onchange = e => {
+  const v = e.target.value, on = e.target.checked;
+  if (v === 'any') { S.anyArea = on; if (on) S.areas = []; }
+  else if (on) { S.anyArea = false; if (!S.areas.includes(v) && S.areas.length < MAX_AREAS) S.areas.push(v); }
+  else S.areas = S.areas.filter(x => x !== v);
+  renderAreas(); refresh(); fail('area', false);
+};
+areaPanel.onclick = e => { if (e.target.classList.contains('ms-done')) closeAreas(); };
+document.addEventListener('click', e => { if (!areaPanel.hidden && !e.target.closest('#areaMs')) closeAreas(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !areaPanel.hidden) { closeAreas(); areaBtn.focus(); } });
 
 /* ---------------- matching-stock counter (MOCK until inventory API exists) ---------------- */
 function mockSummary(q) {
@@ -638,13 +710,12 @@ function refresh() {
 function fail(id, on, msg) {
   const e = $('#e_' + id); if (msg) e.textContent = msg;
   e.classList.toggle('show', on);
-  const f = $('#' + ({ area: 'areaSel', when: 'visitWhen' }[id] || id)); if (f) f.classList.toggle('invalid', on);
+  const f = $('#' + ({ area: 'areaBtn', when: 'visitWhen' }[id] || id)); if (f) f.classList.toggle('invalid', on);
   return !on;
 }
 $('#city').onchange = e => { S.city = e.target.value; S.areas = []; S.anyArea = false; renderAreas(); refresh(); fail('city', !S.city); };
 $('#config').onchange = e => { S.config = e.target.value; refresh(); fail('config', !S.config); };
 $('#budget').onchange = e => { S.budget = e.target.value; const [a, b] = (S.budget || '0-0').split('-').map(Number); S.bmin = a; S.bmax = b; refresh(); fail('budget', !S.budget); };
-$('#areaSel').onchange = e => { const v = e.target.value; if (v && !S.areas.includes(v) && S.areas.length < 4) { S.areas.push(v); S.anyArea = false; } renderAreas(); refresh(); fail('area', false); };
 $('#visitWhen').onchange = e => { S.when = e.target.value; fail('when', !S.when); };
 $('#phone').oninput = e => { e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10); };
 $$('[data-go]').forEach(b => b.onclick = () => {
@@ -769,15 +840,36 @@ async function openRazorpay(order) {
   busy(payBtn, true, 'Complete payment in the Razorpay window…');
   rzp.open();
 }
+// Full-page overlay while we verify the payment server-side, so nobody refreshes mid-way.
+function overlay(on) {
+  const o = $('#payOverlay');
+  if (on) { o.hidden = false; requestAnimationFrame(() => o.classList.add('show')); window.onbeforeunload = () => 'Your payment is being confirmed.'; }
+  else { o.classList.remove('show'); setTimeout(() => { o.hidden = true; }, 220); window.onbeforeunload = null; }
+}
 async function confirmPayment(resp) {
+  overlay(true);
   busy(payBtn, true, 'Confirming payment…');
-  try {
-    const r = await api('/payments/verify', { method: 'POST', body: JSON.stringify({ order_id: resp.razorpay_order_id, payment_id: resp.razorpay_payment_id, signature: resp.razorpay_signature }) });
-    if (!r.ok) { toast(r.data.error || 'We could not confirm the payment. If money was deducted, our team will confirm it shortly.', 6000); busy(payBtn, false, PAY_LABEL); return; }
-    if (window.fbq) fbq('track', 'Purchase', { value: 990, currency: 'INR' });
-    if (window.gtag) gtag('event', 'purchase', { value: 990, currency: 'INR', transaction_id: resp.razorpay_payment_id });
-    location.href = r.data.redirect || '/thank-you';
-  } catch { toast('We could not confirm the payment. If money was deducted, our team will confirm it shortly.', 6000); busy(payBtn, false, PAY_LABEL); }
+  let attempt = 0;
+  while (true) {
+    try {
+      const r = await api('/payments/verify', { method: 'POST', body: JSON.stringify({ order_id: resp.razorpay_order_id, payment_id: resp.razorpay_payment_id, signature: resp.razorpay_signature }) });
+      if (r.ok) {
+        if (window.gtag) gtag('event', 'purchase', { value: 990, currency: 'INR', transaction_id: resp.razorpay_payment_id });
+        window.onbeforeunload = null;
+        location.href = r.data.redirect || '/thank-you';
+        return;
+      }
+      if (r.status >= 500 && attempt < 2) { attempt++; await new Promise(res => setTimeout(res, 1500)); continue; }
+      overlay(false); busy(payBtn, false, PAY_LABEL);
+      toast(r.data.error || 'We could not confirm the payment. If money was deducted, our team will confirm it shortly.', 7000);
+      return;
+    } catch {
+      if (attempt < 2) { attempt++; await new Promise(res => setTimeout(res, 1500)); continue; }
+      overlay(false); busy(payBtn, false, PAY_LABEL);
+      toast('We could not confirm the payment. If money was deducted, our team will confirm it shortly.', 7000);
+      return;
+    }
+  }
 }
 
 /* ---------------- content ---------------- */
