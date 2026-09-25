@@ -117,7 +117,7 @@ export async function otpVerify({ body, secure = false }, deps) {
     key_id: config.razorpayKeyId,
     amount,
     currency,
-    prefill: { name: row.name, contact: row.phone, email: row.email || '' },
+    prefill: { name: row.name, contact: '+91' + row.phone, email: row.email || '' }, // Razorpay wants the country code
   }, { setCookie: serializeCookie(SESSION_COOKIE, token, { maxAge: SESSION_TTL_S, secure }) });
 }
 

@@ -116,7 +116,7 @@ test('otpVerify with the right OTP verifies the phone, creates the Razorpay orde
   assert.equal(r.body.key_id, 'rzp_test_key');
   assert.equal(r.body.amount, 99000);
   assert.equal(r.body.currency, 'INR');
-  assert.deepEqual(r.body.prefill, { name: 'Asha Verma', contact: '9876543210', email: 'asha@example.com' });
+  assert.deepEqual(r.body.prefill, { name: 'Asha Verma', contact: '+919876543210', email: 'asha@example.com' });
 
   const row = deps.repo.rows.get('bk_seed');
   assert.equal(row.status, 'order_created');
