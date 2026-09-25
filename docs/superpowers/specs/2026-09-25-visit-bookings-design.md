@@ -20,7 +20,7 @@ Rebuild https://bookvisit.openhouse.in as a polished, mobile-first-but-desktop-g
 - **WhatsApp:** Interakt `POST https://api.interakt.ai/v1/public/message/`, `Authorization: Basic {INTERAKT_API_KEY}`, type `Template`.
 
 ## Pages (`frontend/`)
-`/` landing (`index.html`), `/thank-you`, `/terms`, `/privacy`, `/refund-policy`. Clean URLs via `vercel.json`. Brand: DM Sans, orange `#FA541C`, ink `#1A1F2C`, warm `#FFF8F5`; real logo, hero photos, property photos and customer testimonials from openhouse.in; real contact details (Avano Technologies Pvt Ltd, Sector 65 Gurugram, info@openhouse.in, +91 80654 53090).
+`/` landing (`index.html`), `/thank-you`, `/terms`, `/privacy`, `/refund-policy`. Clean URLs via `vercel.json`. Brand: DM Sans, orange `#FA541C`, ink `#1A1F2C`, warm `#FFF8F5`; real logo, hero photos, property photos and customer testimonials from openhouse.in; real contact details (Avano Technologies Pvt Ltd, Sector 65 Gurugram, info@openhouse.in, +91 70421 18400).
 
 ## Flow
 1. Visitor fills the form. Client validates. Tap **Pay ₹990**.
