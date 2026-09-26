@@ -6,6 +6,7 @@ import { generateOtp, hashOtp, newSalt, otpMatches, renderOtpBody } from './otp.
 import { createSessionToken, verifySessionToken } from './session.js';
 import { verifyPaymentSignature, verifyWebhookSignature } from './razorpay.js';
 import { serializeCookie } from './http.js';
+import { timingSafeEqual } from 'node:crypto';
 
 export const SESSION_COOKIE = 'ohvb_session';
 const SESSION_TTL_S = 24 * 60 * 60;
@@ -193,5 +194,58 @@ export async function bookingsMe({ cookies }, deps) {
       amount: '₹' + Math.round((row.amount_paise || 0) / 100).toLocaleString('en-IN'),
       payment_id: row.razorpay_payment_id || null,
     },
+  });
+}
+
+/* ---------------- Export: rows for the Google Sheets sync (Bearer EXPORT_API_KEY) ---------------- */
+export const EXPORT_COLUMNS = ['id', 'created_at', 'updated_at', 'status', 'name', 'phone', 'email', 'city', 'configuration', 'budget', 'areas', 'visit_when',
+  'amount_inr', 'paid_at', 'paid_via', 'razorpay_order_id', 'razorpay_payment_id', 'phone_verified_at', 'whatsapp_message_id', 'whatsapp_error',
+  'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'source', 'page_url', 'referrer', 'is_test', 'notes'];
+const EXPORT_MAX = 500;
+
+function bearerOk(header, expected) {
+  if (!expected || typeof header !== 'string' || !header.startsWith('Bearer ')) return false;
+  const a = Buffer.from(header.slice(7)), b = Buffer.from(expected);
+  return a.length === b.length && timingSafeEqual(a, b);
+}
+const iso = ms => (ms === null || ms === undefined ? null : new Date(ms).toISOString());
+
+function exportRow(r) {
+  const utm = r.utm && typeof r.utm === 'object' ? r.utm : {};
+  const full = {
+    id: r.id, created_at: iso(r.created_at), updated_at: iso(r.updated_at), status: r.status, name: r.name, phone: r.phone, email: r.email || '',
+    city: CITIES[r.city] || r.city || '', configuration: CONFIGS[r.configuration] || r.configuration || '', budget: r.budget_label || '',
+    areas: r.areas_label || '', visit_when: VISIT_WHEN[r.visit_when] || r.visit_when || '',
+    amount_inr: Math.round((r.amount_paise || 0) / 100), paid_at: iso(r.paid_at), paid_via: r.paid_via || '',
+    razorpay_order_id: r.razorpay_order_id || '', razorpay_payment_id: r.razorpay_payment_id || '', phone_verified_at: iso(r.phone_verified_at),
+    whatsapp_message_id: r.interakt_message_id || '', whatsapp_error: r.interakt_error || '',
+    utm_source: utm.utm_source || '', utm_medium: utm.utm_medium || '', utm_campaign: utm.utm_campaign || '', utm_term: utm.utm_term || '', utm_content: utm.utm_content || '',
+    source: r.source || '', page_url: r.page_url || '', referrer: r.referrer || '', is_test: !!r.is_test, notes: r.notes || '',
+  };
+  const out = {};
+  for (const k of EXPORT_COLUMNS) out[k] = full[k];
+  return out;
+}
+
+export async function exportBookings({ query, authorization }, deps) {
+  const { repo, config } = deps;
+  if (!bearerOk(authorization, config.exportApiKey)) return fail(401, 'Unauthorized');
+  const q = query || {};
+  let since = 0;
+  if (q.updated_after) {
+    since = Date.parse(q.updated_after);
+    if (!Number.isFinite(since)) return fail(400, 'updated_after must be an ISO date');
+  }
+  const limit = Math.min(EXPORT_MAX, Math.max(1, parseInt(q.limit, 10) || EXPORT_MAX));
+  const rows = await repo.listUpdatedAfter(since, limit + 1);
+  const has_more = rows.length > limit;
+  const page = rows.slice(0, limit);
+  const last = page[page.length - 1];
+  return reply(200, {
+    ok: true,
+    columns: EXPORT_COLUMNS,
+    rows: page.map(exportRow),
+    has_more,
+    next_after: last ? iso(last.updated_at ?? last.created_at) : null,
   });
 }

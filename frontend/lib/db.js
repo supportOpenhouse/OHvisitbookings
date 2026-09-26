@@ -92,6 +92,12 @@ export function makeRepo(sql) {
     async setOtpSmsId(id, smsId) {
       await sql`update visitbookings set otp_sms_id = ${smsId}, updated_at = now() where id = ${id}`;
     },
+
+    // Rows changed after `sinceMs`, oldest change first (Google Sheets export cursor).
+    async listUpdatedAfter(sinceMs, limit) {
+      const rows = await sql`select * from visitbookings where updated_at > ${ts(sinceMs || 0)} order by updated_at asc, id asc limit ${limit}`;
+      return rows.map(out);
+    },
   };
 }
 

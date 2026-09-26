@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createHmac } from 'node:crypto';
-import { otpSend, otpVerify, paymentsVerify, paymentsWebhook, bookingsMe } from '../lib/handlers.js';
+import { otpSend, otpVerify, paymentsVerify, paymentsWebhook, bookingsMe, exportBookings } from '../lib/handlers.js';
 import { createSessionToken, verifySessionToken } from '../lib/session.js';
 import { otpMatches } from '../lib/otp.js';
 import { fakeDeps, goodForm, seededOtpRow } from './helpers.js';
@@ -267,4 +267,84 @@ test('bookingsMe requires a session and returns only safe, labelled fields', asy
     },
   });
   assert.equal(JSON.stringify(r.body).includes('secret-hash'), false);
+});
+
+/* ---------------- exportBookings (Google Sheets sync) ---------------- */
+function exportRow(deps, id, extra = {}) {
+  deps.repo.rows.set(id, {
+    id, status: 'paid', is_test: false, name: 'Asha Verma', phone: '9876543210', email: 'asha@example.com', city: 'gurgaon', configuration: '3bhk',
+    budget_min: 10000000, budget_max: 15000000, budget_label: '₹1 Cr – ₹1.5 Cr', areas: ['sohna-road'], areas_label: 'Sohna Road (Sec 49–57)', visit_when: 'this-sat',
+    amount_paise: 99000, currency: 'INR', razorpay_order_id: 'order_1', razorpay_payment_id: 'pay_1', razorpay_signature: 'sig-secret', paid_via: 'client',
+    otp_hash: 'hash-secret', otp_salt: 'salt-secret', otp_attempts: 1, otp_sms_id: 'sms_1', interakt_message_id: 'wa_1', interakt_error: null,
+    source: 'bookvisit-990', utm: { utm_source: 'meta', utm_campaign: 'sept', fbclid: 'x' }, page_url: 'https://bookvisit.openhouse.in/', referrer: 'https://fb.com',
+    user_agent: 'UA', ip: '1.2.3.4', notes: null, created_at: deps.now() - 3600_000, updated_at: deps.now() - 1800_000, paid_at: deps.now() - 1700_000, phone_verified_at: deps.now() - 1750_000,
+    ...extra,
+  });
+}
+const auth = 'Bearer export-key-123';
+
+test('exportBookings requires the export API key', async () => {
+  const deps = fakeDeps();
+  exportRow(deps, 'a');
+  assert.equal((await exportBookings({ query: {}, authorization: '' }, deps)).status, 401);
+  assert.equal((await exportBookings({ query: {}, authorization: 'Bearer wrong' }, deps)).status, 401);
+  assert.equal((await exportBookings({ query: {}, authorization: 'export-key-123' }, deps)).status, 401, 'must be a Bearer token');
+  const none = fakeDeps({ config: { ...fakeDeps().config, exportApiKey: '' } });
+  assert.equal((await exportBookings({ query: {}, authorization: 'Bearer ' }, none)).status, 401, 'unset key never matches');
+});
+
+test('exportBookings returns whitelisted, labelled columns and never secrets', async () => {
+  const deps = fakeDeps();
+  exportRow(deps, 'a');
+  const r = await exportBookings({ query: {}, authorization: auth }, deps);
+  assert.equal(r.status, 200);
+  assert.equal(r.body.ok, true);
+  assert.deepEqual(r.body.columns, ['id', 'created_at', 'updated_at', 'status', 'name', 'phone', 'email', 'city', 'configuration', 'budget', 'areas', 'visit_when',
+    'amount_inr', 'paid_at', 'paid_via', 'razorpay_order_id', 'razorpay_payment_id', 'phone_verified_at', 'whatsapp_message_id', 'whatsapp_error',
+    'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'source', 'page_url', 'referrer', 'is_test', 'notes']);
+  const row = r.body.rows[0];
+  assert.equal(row.id, 'a');
+  assert.equal(row.city, 'Gurgaon');
+  assert.equal(row.configuration, '3 BHK');
+  assert.equal(row.visit_when, 'This Saturday');
+  assert.equal(row.budget, '₹1 Cr – ₹1.5 Cr');
+  assert.equal(row.amount_inr, 990);
+  assert.equal(row.utm_source, 'meta');
+  assert.equal(row.utm_campaign, 'sept');
+  assert.equal(row.utm_medium, '');
+  assert.equal(row.created_at, new Date(deps.now() - 3600_000).toISOString());
+  assert.equal(row.paid_at, new Date(deps.now() - 1700_000).toISOString());
+  assert.equal(row.whatsapp_message_id, 'wa_1');
+  const json = JSON.stringify(r.body);
+  for (const secret of ['hash-secret', 'salt-secret', 'sig-secret', 'fbclid', 'user_agent', '"ip"']) assert.equal(json.includes(secret), false, secret + ' must not be exported');
+  assert.deepEqual(Object.keys(row), r.body.columns, 'row keys follow the column order');
+});
+
+test('exportBookings pages by updated_after, oldest change first, and returns a cursor', async () => {
+  const deps = fakeDeps();
+  exportRow(deps, 'a', { updated_at: 1000 });
+  exportRow(deps, 'b', { updated_at: 3000 });
+  exportRow(deps, 'c', { updated_at: 2000 });
+  const all = await exportBookings({ query: {}, authorization: auth }, deps);
+  assert.deepEqual(all.body.rows.map(x => x.id), ['a', 'c', 'b']);
+  assert.equal(all.body.next_after, new Date(3000).toISOString());
+  assert.equal(all.body.has_more, false);
+  const since = await exportBookings({ query: { updated_after: new Date(1000).toISOString() }, authorization: auth }, deps);
+  assert.deepEqual(since.body.rows.map(x => x.id), ['c', 'b']);
+  const limited = await exportBookings({ query: { limit: '2' }, authorization: auth }, deps);
+  assert.deepEqual(limited.body.rows.map(x => x.id), ['a', 'c']);
+  assert.equal(limited.body.has_more, true);
+  assert.equal(limited.body.next_after, new Date(2000).toISOString());
+  const bad = await exportBookings({ query: { updated_after: 'not-a-date' }, authorization: auth }, deps);
+  assert.equal(bad.status, 400);
+});
+
+test('exportBookings caps the page size and tolerates empty tables', async () => {
+  const deps = fakeDeps();
+  for (let i = 0; i < 5; i++) exportRow(deps, 'r' + i, { updated_at: i + 1 });
+  const r = await exportBookings({ query: { limit: '99999' }, authorization: auth }, deps);
+  assert.equal(r.body.rows.length, 5);
+  const empty = await exportBookings({ query: {}, authorization: auth }, fakeDeps());
+  assert.deepEqual(empty.body.rows, []);
+  assert.equal(empty.body.next_after, null);
 });

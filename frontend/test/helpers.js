@@ -38,6 +38,12 @@ export function fakeRepo(seed = []) {
       repo.calls.push(['recordInterakt', id, messageId || null, error || null]);
     },
     async setOtpSmsId(id, smsId) { rows.get(id).otp_sms_id = smsId; },
+    // Rows changed after `sinceMs`, oldest change first (export cursor).
+    async listUpdatedAfter(sinceMs, limit) {
+      return [...rows.values()].filter(r => (r.updated_at ?? r.created_at ?? 0) > sinceMs)
+        .sort((a, b) => ((a.updated_at ?? a.created_at) - (b.updated_at ?? b.created_at)) || String(a.id).localeCompare(String(b.id)))
+        .slice(0, limit).map(r => ({ ...r }));
+    },
   };
   return repo;
 }
@@ -54,6 +60,7 @@ export const baseConfig = {
   razorpayKeyId: 'rzp_test_key',
   razorpayKeySecret: 'rzp_secret',
   razorpayWebhookSecret: 'wh_secret',
+  exportApiKey: 'export-key-123',
   interakt: { templateName: 'visit_booked', languageCode: 'en', bodyFields: ['name'] },
 };
 

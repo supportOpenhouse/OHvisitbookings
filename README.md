@@ -17,9 +17,11 @@ frontend/
     payments/verify.js  verify Razorpay signature → mark paid → fire Interakt template
     payments/webhook.js Razorpay webhook (payment.captured) safety net
     bookings/me.js      booking summary for the thank-you page (session cookie)
+    export/bookings.js  token-protected export for the Google Sheets sync (Bearer EXPORT_API_KEY)
   lib/                  framework-free logic (validate, otp, session, razorpay, interakt, kaleyra, handlers, db)
   scripts/migrate.mjs   creates the `visitbookings` table (idempotent)
   scripts/dev-server.mjs local server for pages + functions
+  scripts/google-sheets-sync.gs  Apps Script: pulls bookings into a Google Sheet every 5 minutes
   test/                 node --test unit tests
 docs/superpowers/specs/ design spec
 ```
@@ -53,10 +55,15 @@ Add (locally in `frontend/.env` and in Vercel → Project → Settings → Envir
 | `INTERAKT_BODY_FIELDS` | Comma-separated fields for the template's `{{1}},{{2}}…` (default `name`). Allowed: `name, first_name, phone, email, city, configuration, budget, areas, visit_when, amount, booking_id`. |
 | `BOOKING_AMOUNT_PAISE` | Default `99000`. |
 | `PUBLIC_BASE_URL` | Default `https://bookvisit.openhouse.in`. |
+| `EXPORT_API_KEY` | Bearer token for `/api/export/bookings`. `openssl rand -hex 24`. Same value goes into the Apps Script's Script Properties. |
 
 ## Booking lifecycle (`visitbookings.status`)
 
 `otp_sent → verified → order_created → paid` (`refunded` reserved for ops). One row per attempt, so drop-offs are visible. OTPs are stored only as salted hashes; 10-minute expiry, 5 attempts, 5 sends per number per hour. Rows created in dev mode are flagged `is_test = true`.
+
+## Google Sheets sync
+
+`scripts/google-sheets-sync.gs` pulls the `visitbookings` table into a sheet tab called **Bookings** every 5 minutes, upserting by booking id. It calls `GET /api/export/bookings?updated_after=…&limit=500` with `Authorization: Bearer EXPORT_API_KEY`; the endpoint returns labelled, whitelisted columns (no OTP hashes, signatures, IPs or user agents) ordered by `updated_at`, with a cursor for paging. Setup steps are at the top of the script: paste it into Extensions → Apps Script, add `EXPORT_API_KEY` to Script Properties, run `setup` once.
 
 ## Notes
 

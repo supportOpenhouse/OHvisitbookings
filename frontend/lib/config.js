@@ -27,6 +27,7 @@ export function loadConfig(env = process.env) {
     razorpayKeySecret: env.RAZORPAY_KEY_SECRET || '',
     razorpayWebhookSecret: env.RAZORPAY_WEBHOOK_SECRET || '',
     interaktApiKey: env.INTERAKT_API_KEY || '',
+    exportApiKey: env.EXPORT_API_KEY || '',
     interakt: {
       templateName: env.INTERAKT_TEMPLATE_NAME || '',
       languageCode: env.INTERAKT_TEMPLATE_LANG || 'en',

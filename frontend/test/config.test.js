@@ -19,6 +19,7 @@ test('loadConfig applies defaults', () => {
   assert.deepEqual(c.interakt, { templateName: 'tpl', languageCode: 'en', bodyFields: ['name'] });
   assert.equal(c.otpDevMode, false);
   assert.equal(c.isProduction, false);
+  assert.equal(c.exportApiKey, '');
 });
 
 test('loadConfig parses overrides and treats Vercel production as production', () => {
@@ -28,6 +29,10 @@ test('loadConfig parses overrides and treats Vercel production as production', (
   assert.deepEqual(c.interakt.bodyFields, ['first_name', 'city', 'amount']);
   assert.equal(c.interakt.languageCode, 'hi');
   assert.equal(c.otpDevMode, true, 'flag is read; handlers gate it by isProduction');
+});
+
+test('loadConfig reads EXPORT_API_KEY', () => {
+  assert.equal(loadConfig({ ...env, EXPORT_API_KEY: 'k1' }).exportApiKey, 'k1');
 });
 
 test('loadConfig throws when APP_SECRET is missing', () => {
