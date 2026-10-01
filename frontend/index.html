@@ -13,7 +13,7 @@ h1 br{display:none}@media(min-width:900px){h1 br{display:inline}}
 h2{font-size:clamp(21px,5.4vw,30px);line-height:1.22;font-weight:700;text-wrap:balance}
 h3{font-size:16px;font-weight:600;line-height:1.3}
 p{color:var(--ink2)}
-.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.wrap{max-width:1320px;margin:0 auto;padding:0 16px}
 section{padding:44px 0}@media(min-width:768px){section{padding:72px 0}}
 .eyebrow{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--o);margin-bottom:8px;display:block}
 .sec-sub{margin-top:8px;font-size:15px;max-width:560px}
@@ -30,8 +30,8 @@ section{padding:44px 0}@media(min-width:768px){section{padding:72px 0}}
 /* header */
 header{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:58px;gap:10px}
-.logo{display:flex;align-items:center;text-decoration:none;color:var(--ink);font-family:var(--fh);font-weight:700;font-size:20px}
-.logo i{font-style:normal;font-weight:400}.logo b{width:28px;height:28px;border-radius:50%;background:var(--n);color:#fff;display:grid;place-items:center;font-size:14px;margin-right:7px}
+.logo{display:flex;align-items:center;text-decoration:none}.logo img{height:28px;width:auto;display:block}
+
 .nav-r{display:flex;align-items:center;gap:8px}
 .wa{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center}
 
@@ -192,7 +192,7 @@ header{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid 
 .dark{background:var(--n);color:#fff}.dark p{color:rgba(255,255,255,.78)}.dark h2{color:#fff}
 .final{background:radial-gradient(700px 400px at 10% 110%,#1E4A85 0%,var(--n) 50%,var(--nd) 100%)}
 footer{background:var(--nd);color:rgba(255,255,255,.6);padding:34px 0 30px;font-size:12.5px}
-footer .logo{color:#fff;margin-bottom:10px}
+footer .logo{margin-bottom:12px}footer .logo img{height:30px;filter:brightness(0) invert(1);opacity:.95}
 footer a{color:rgba(255,255,255,.75);text-decoration:none}
 footer .links{display:flex;flex-wrap:wrap;gap:6px 16px;margin:12px 0}
 footer p{color:rgba(255,255,255,.55);font-size:12px;margin-top:8px}
@@ -304,6 +304,52 @@ footer p{color:rgba(255,255,255,.55);font-size:12px;margin-top:8px}
 .otp .inp.ok{border-color:var(--g);background:var(--gl)}
 .otp-hint{font-size:12.5px;color:var(--mut);margin-top:6px}
 #sendOtp:disabled{opacity:.6;cursor:default}
+
+/* ===== desktop spread (≥900px): wider lane, edge-to-edge header, roomier grids; mobile untouched ===== */
+@media(min-width:900px){
+  .wrap{padding:0 40px}
+  section{padding:88px 0}
+  header .wrap{max-width:none;padding:0 32px}
+  .nav{height:68px}
+  .nav-r{gap:12px}
+  .logo img{height:32px}
+  .hero{padding:72px 0 80px}
+  .hero-grid{gap:72px}
+  .hero .sub{font-size:17px;max-width:560px}
+  .ticks li{font-size:15.5px}
+  .proofrow{gap:24px;margin-top:28px;padding-top:22px}
+  .proofrow .fh{font-size:24px}.proofrow p{font-size:12.5px}
+  .qstrip{gap:20px;padding:2px 0 6px;margin:0}
+  .vs{gap:24px;margin-top:30px}.vs .col{padding:26px 28px}
+  .steps{gap:28px;margin-top:32px}
+  .get{gap:18px;margin-top:30px}.gc{padding:20px}
+  .feats{gap:16px}
+  .gal{gap:18px}
+  .tms{gap:20px;margin-top:28px}.tm{padding:22px}
+  .prom{gap:20px}
+  .faq{margin-top:26px}
+  footer{padding:56px 0 40px;font-size:13.5px}
+  footer .wrap{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);grid-template-areas:"logo links" "contact links" "legal legal";column-gap:64px;row-gap:14px;align-items:start}
+  footer .logo{grid-area:logo;margin-bottom:0}
+  footer .wrap>div:not(.links){grid-area:contact}
+  footer .links{grid-area:links;justify-self:end;margin:6px 0 0;gap:8px 28px;font-size:14px}
+  footer p{grid-area:legal;margin-top:24px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);max-width:none;line-height:1.7}
+}
+@media(min-width:1200px){
+  .wrap{padding:0 56px}
+  header .wrap{padding:0 40px}
+  .hero-grid{grid-template-columns:1.1fr .9fr;gap:110px}
+  h1{font-size:46px}
+  .get{grid-template-columns:repeat(4,1fr);gap:20px}
+  .steps{gap:36px}
+  .vs{gap:32px}
+  .tms{gap:24px}
+  .prom{gap:28px}
+}
+@media(min-width:1500px){
+  .wrap{max-width:1400px}
+  header .wrap{padding:0 48px}
+}
 </style><link rel="icon" href="/assets/favicon.ico">
 <link rel="canonical" href="https://bookvisit.openhouse.in/">
 <meta property="og:title" content="Your home search, finally made simple. | Openhouse">
@@ -331,7 +377,7 @@ src="https://www.facebook.com/tr?id=1437792258100227&ev=PageView&noscript=1"
 </head><body>
 
 <header><div class="wrap nav">
-  <a class="logo" href="/"><b>h</b>Open<i>house</i></a>
+  <a class="logo" href="/" aria-label="Openhouse home"><img src="/assets/logo.png" alt="Openhouse" width="140" height="28"></a>
   <div class="nav-r"><a class="wa" href="#" data-wa aria-label="WhatsApp us"><svg width="18" height="18" viewBox="0 0 24 24" fill="#15A35C"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3a.4.4 0 000-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.2c0-.1-.2-.2-.5-.3z"/></svg></a><button class="btn btn-o btn-sm" data-open="header">Get advisor</button></div>
 </div></header>
 
@@ -446,7 +492,7 @@ src="https://www.facebook.com/tr?id=1437792258100227&ev=PageView&noscript=1"
 </div></section>
 
 <footer><div class="wrap">
-  <a class="logo" href="/"><b>h</b>Open<i>house</i></a>
+  <a class="logo" href="/" aria-label="Openhouse home"><img src="/assets/logo.png" alt="Openhouse" width="140" height="28"></a>
   <div>Ready to move homes in Gurgaon, Noida and Ghaziabad. <a href="tel:+917042118400">+91 70421 18400</a> · <a href="mailto:info@openhouse.in">info@openhouse.in</a></div>
   <div class="links"><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/refund-policy">Refund policy</a><a href="https://openhouse.in/about">About</a></div>
   <p>Openhouse sells ready to move homes in existing societies (resale, not under construction). The ₹990 is a booking amount, 100% refunded if you don't find a home you like, and adjusted against our fee if you buy. Travel reimbursement: ₹500 per trip for visits to Openhouse flats, up to ₹5,000 (10 trips), paid only if you buy an Openhouse home, on signing the Agreement to Sell. 414-415, Suncity Success Tower, Golf Course Extension Road, Sector 65, Gurugram 122101. © 2026 Avano Technologies Pvt. Ltd. This site is not part of Meta or Facebook.</p>
