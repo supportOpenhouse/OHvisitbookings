@@ -5,7 +5,7 @@ import { buildTemplatePayload, sendTemplate, resolveField } from '../lib/interak
 const booking = {
   id: '11111111-2222-3333-4444-555555555555', name: 'Asha Verma', phone: '9876543210', email: 'a@x.com',
   city: 'gurgaon', configuration: '3bhk', budget_label: '₹1 Cr – ₹1.5 Cr', areas_label: 'Sohna Road (Sec 49–57)',
-  visit_when: 'this-sat', amount_paise: 99000,
+  visit_when: 'within-1-month', amount_paise: 99000,
 };
 
 test('resolveField maps booking fields to human-readable values', () => {
@@ -13,7 +13,7 @@ test('resolveField maps booking fields to human-readable values', () => {
   assert.equal(resolveField(booking, 'first_name'), 'Asha');
   assert.equal(resolveField(booking, 'city'), 'Gurgaon');
   assert.equal(resolveField(booking, 'configuration'), '3 BHK');
-  assert.equal(resolveField(booking, 'visit_when'), 'This Saturday');
+  assert.equal(resolveField(booking, 'visit_when'), 'Within 1 month');
   assert.equal(resolveField(booking, 'amount'), '₹990');
   assert.equal(resolveField(booking, 'budget'), '₹1 Cr – ₹1.5 Cr');
   assert.equal(resolveField(booking, 'areas'), 'Sohna Road (Sec 49–57)');

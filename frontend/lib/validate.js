@@ -3,30 +3,29 @@
 
 export const CITIES = {
   gurgaon: 'Gurgaon',
-  noida: 'Noida & Greater Noida',
+  noida: 'Noida',
+  'greater-noida-west': 'Greater Noida West',
   ghaziabad: 'Ghaziabad',
 };
 
 export const CONFIGS = {
   '2bhk': '2 BHK',
   '3bhk': '3 BHK',
-  '4bhk': '4 BHK & above',
+  '4bhk': '4 BHK',
 };
 
 export const BUDGETS = {
-  '0-7500000': 'Under ₹75 L',
-  '7500000-10000000': '₹75 L – ₹1 Cr',
-  '10000000-15000000': '₹1 Cr – ₹1.5 Cr',
-  '15000000-25000000': '₹1.5 Cr – ₹2.5 Cr',
-  '25000000-999900000': 'Above ₹2.5 Cr',
+  '0-8000000': 'Under ₹80 L',
+  '8000000-12000000': '₹80 L – ₹1.2 Cr',
+  '12000000-20000000': '₹1.2 – 2 Cr',
+  '20000000-999900000': '₹2 Cr+',
 };
 
+// Move-in timeline (stored in the visit_when column). Optional on the booking sheet.
 export const VISIT_WHEN = {
-  'this-sat': 'This Saturday',
-  'this-sun': 'This Sunday',
-  'next-weekend': 'Next weekend',
-  'weekday-eve': 'A weekday evening',
-  flexible: 'Flexible — any time in the next 30 days',
+  'within-1-month': 'Within 1 month',
+  '1-3-months': '1 to 3 months',
+  '3-6-months': '3 to 6 months',
 };
 
 export const AREAS = {
@@ -47,6 +46,9 @@ export const AREAS = {
     ['sec-44-52', 'Sector 44–52'],
     ['sec-62-70', 'Sector 62–70'],
   ],
+  'greater-noida-west': [
+    ['gr-noida-west', 'Greater Noida West'],
+  ],
   ghaziabad: [
     ['indirapuram', 'Indirapuram'],
     ['vaishali', 'Vaishali & Vasundhara'],
@@ -57,7 +59,7 @@ export const AREAS = {
 };
 
 export const MAX_AREAS = 4;
-const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid', 'gclid'];
+const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid', 'gclid', 'variant'];
 
 export function normalizePhone(raw) {
   if (raw === null || raw === undefined) return null;
@@ -80,8 +82,8 @@ export function validateBooking(input) {
   const phone = normalizePhone(src.phone);
   if (!phone) errors.phone = 'Enter a valid 10-digit mobile number.';
 
-  const email = str(src.email, 200);
-  if (!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(email)) errors.email = 'Enter a valid email.';
+  const email = str(src.email, 200); // optional: the booking sheet does not ask for it
+  if (email && !/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(email)) errors.email = 'Enter a valid email.';
 
   const city = str(src.city, 40);
   if (!CITIES[city]) errors.city = 'Choose a city.';
@@ -92,12 +94,13 @@ export function validateBooking(input) {
   const budget = str(src.budget, 40);
   if (!BUDGETS[budget]) errors.budget = 'Choose one.';
 
-  const visit_when = str(src.visit_when, 40);
-  if (!VISIT_WHEN[visit_when]) errors.visit_when = 'Tell us when you are free.';
+  const visit_when = str(src.visit_when, 40); // optional move-in timeline
+  if (visit_when && !VISIT_WHEN[visit_when]) errors.visit_when = 'Choose one.';
 
   let areas = [];
   let areas_label = '';
-  if (src.areas === 'any' || (Array.isArray(src.areas) && src.areas.length === 1 && src.areas[0] === 'any')) {
+  const noAreas = src.areas === undefined || src.areas === null || src.areas === '';
+  if (noAreas || src.areas === 'any' || (Array.isArray(src.areas) && src.areas.length === 1 && src.areas[0] === 'any')) {
     areas = ['any'];
     areas_label = CITIES[city] ? `Anywhere in ${CITIES[city]}` : '';
   } else if (Array.isArray(src.areas) && CITIES[city]) {

@@ -7,7 +7,8 @@ Live at https://bookvisit.openhouse.in (Vercel, project root directory = `fronte
 
 ```
 frontend/
-  index.html            landing page (form → OTP → Razorpay → /thank-you)
+  index.html            landing page, variant "B-home-in-30-days" (booking sheet → OTP → Razorpay → /thank-you)
+  videos/               drop the three home-tour mp4 + jpg files here (see videos/README.md); missing ones hide their card
   thank-you.html        post-payment page ("team will contact you within 24 hours")
   terms.html · privacy.html · refund-policy.html
   assets/               site.css (brand tokens from openhouse.in), logo, photos
@@ -65,8 +66,11 @@ Add (locally in `frontend/.env` and in Vercel → Project → Settings → Envir
 
 `scripts/google-sheets-sync.gs` pulls the `visitbookings` table into a sheet tab called **Bookings** every 5 minutes, upserting by booking id. It calls `GET /api/export/bookings?updated_after=…&limit=500` with `Authorization: Bearer EXPORT_API_KEY`; the endpoint returns labelled, whitelisted columns (no OTP hashes, signatures, IPs or user agents) ordered by `updated_at`, with a cursor for paging. Setup steps are at the top of the script: paste it into Extensions → Apps Script, add `EXPORT_API_KEY` to Script Properties, run `setup` once.
 
+## Booking vocabulary (server-validated)
+
+City `gurgaon | noida | greater-noida-west | ghaziabad` · Home `2bhk | 3bhk | 4bhk` · Budget `0-8000000 | 8000000-12000000 | 12000000-20000000 | 20000000-999900000` · Move-in timeline (optional, stored in `visit_when`) `within-1-month | 1-3-months | 3-6-months`. Email and areas are optional (areas default to "Anywhere in <city>"). The page variant is saved in `utm.variant`.
+
 ## Notes
 
-- The "matching stock" counter on the landing page is simulated (`OH.MOCK_COUNTER`) until a real inventory API exists.
-- The showcase photos and customer stories are taken from openhouse.in (Sept 2026); refresh them when inventory changes.
+- The hero "New buyers for <month>: N of 30 left" counter is hard-coded in `CONFIG.slotsLeft` in index.html; wire it to real capacity or remove it before scaling ads.
 - Legal pages mirror openhouse.in's Terms and Privacy Policy with booking-specific additions; the Refund Policy reflects the guarantees stated on the landing page. Have legal review before launch.

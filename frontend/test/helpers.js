@@ -82,7 +82,7 @@ export function fakeDeps(overrides = {}) {
 export function goodForm() {
   return {
     name: 'Asha Verma', phone: '9876543210', email: 'asha@example.com', city: 'gurgaon', configuration: '3bhk',
-    budget: '10000000-15000000', areas: ['sohna-road'], visit_when: 'this-sat', utm: { utm_source: 'meta' },
+    budget: '8000000-12000000', areas: ['sohna-road'], visit_when: 'within-1-month', utm: { utm_source: 'meta' },
   };
 }
 
@@ -92,7 +92,7 @@ export function seededOtpRow(deps, extra = {}) {
   const row = {
     id: 'bk_seed', name: 'Asha Verma', phone: '9876543210', email: 'asha@example.com', city: 'gurgaon', configuration: '3bhk',
     budget_min: 10000000, budget_max: 15000000, budget_label: '₹1 Cr – ₹1.5 Cr', areas: ['sohna-road'], areas_label: 'Sohna Road (Sec 49–57)',
-    visit_when: 'this-sat', status: 'otp_sent', otp_salt: salt, otp_hash: hashOtp('123456', salt, deps.config.appSecret),
+    visit_when: 'within-1-month', status: 'otp_sent', otp_salt: salt, otp_hash: hashOtp('123456', salt, deps.config.appSecret),
     otp_expires_at: deps.now() + 5 * 60 * 1000, otp_attempts: 0, created_at: deps.now(), amount_paise: 99000, currency: 'INR', ...extra,
   };
   deps.repo.rows.set(row.id, row);

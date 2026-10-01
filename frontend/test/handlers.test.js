@@ -262,7 +262,7 @@ test('bookingsMe requires a session and returns only safe, labelled fields', asy
     ok: true,
     booking: {
       id: 'bk_seed', ref: 'BK_SEED', name: 'Asha Verma', first_name: 'Asha', phone_masked: '•••••• 3210', email: 'asha@example.com',
-      city: 'Gurgaon', configuration: '3 BHK', budget: '₹1 Cr – ₹1.5 Cr', areas: 'Sohna Road (Sec 49–57)', visit_when: 'This Saturday',
+      city: 'Gurgaon', configuration: '3 BHK', budget: '₹1 Cr – ₹1.5 Cr', areas: 'Sohna Road (Sec 49–57)', visit_when: 'Within 1 month',
       status: 'paid', paid_at: 5, amount: '₹990', payment_id: 'pay_1',
     },
   });
@@ -273,7 +273,7 @@ test('bookingsMe requires a session and returns only safe, labelled fields', asy
 function exportRow(deps, id, extra = {}) {
   deps.repo.rows.set(id, {
     id, status: 'paid', is_test: false, name: 'Asha Verma', phone: '9876543210', email: 'asha@example.com', city: 'gurgaon', configuration: '3bhk',
-    budget_min: 10000000, budget_max: 15000000, budget_label: '₹1 Cr – ₹1.5 Cr', areas: ['sohna-road'], areas_label: 'Sohna Road (Sec 49–57)', visit_when: 'this-sat',
+    budget_min: 10000000, budget_max: 15000000, budget_label: '₹1 Cr – ₹1.5 Cr', areas: ['sohna-road'], areas_label: 'Sohna Road (Sec 49–57)', visit_when: 'within-1-month',
     amount_paise: 99000, currency: 'INR', razorpay_order_id: 'order_1', razorpay_payment_id: 'pay_1', razorpay_signature: 'sig-secret', paid_via: 'client',
     otp_hash: 'hash-secret', otp_salt: 'salt-secret', otp_attempts: 1, otp_sms_id: 'sms_1', interakt_message_id: 'wa_1', interakt_error: null,
     source: 'bookvisit-990', utm: { utm_source: 'meta', utm_campaign: 'sept', fbclid: 'x' }, page_url: 'https://bookvisit.openhouse.in/', referrer: 'https://fb.com',
@@ -306,7 +306,7 @@ test('exportBookings returns whitelisted, labelled columns and never secrets', a
   assert.equal(row.id, 'a');
   assert.equal(row.city, 'Gurgaon');
   assert.equal(row.configuration, '3 BHK');
-  assert.equal(row.visit_when, 'This Saturday');
+  assert.equal(row.visit_when, 'Within 1 month');
   assert.equal(row.budget, '₹1 Cr – ₹1.5 Cr');
   assert.equal(row.amount_inr, 990);
   assert.equal(row.utm_source, 'meta');

@@ -26,5 +26,5 @@ test('buildDeps wires the gateways to the configured credentials', async () => {
   await deps.wa.sendTemplate({ id: 'b', name: 'Asha V', phone: '9876543210', city: 'noida' }, deps.config.interakt);
   assert.equal(calls[2].url, 'https://api.interakt.ai/v1/public/message/');
   assert.equal(calls[2].init.headers.Authorization, 'Basic ik');
-  assert.deepEqual(JSON.parse(calls[2].init.body).template.bodyValues, ['Asha', 'Noida & Greater Noida']);
+  assert.deepEqual(JSON.parse(calls[2].init.body).template.bodyValues, ['Asha', 'Noida']);
 });

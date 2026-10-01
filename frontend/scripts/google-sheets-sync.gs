@@ -24,7 +24,7 @@
 var COLUMNS = ['id', 'created_at', 'updated_at', 'status', 'name', 'phone', 'email', 'city', 'configuration', 'budget', 'areas', 'visit_when',
   'amount_inr', 'paid_at', 'paid_via', 'razorpay_order_id', 'razorpay_payment_id', 'phone_verified_at', 'whatsapp_message_id', 'whatsapp_error',
   'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'source', 'page_url', 'referrer', 'is_test', 'notes'];
-var HEADERS = ['Booking ID', 'Created', 'Updated', 'Status', 'Name', 'Phone', 'Email', 'City', 'Configuration', 'Budget', 'Areas', 'Visit when',
+var HEADERS = ['Booking ID', 'Created', 'Updated', 'Status', 'Name', 'Phone', 'Email', 'City', 'Configuration', 'Budget', 'Areas', 'Move-in timeline',
   'Amount (₹)', 'Paid at', 'Paid via', 'Razorpay order', 'Razorpay payment', 'Phone verified at', 'WhatsApp msg id', 'WhatsApp error',
   'UTM source', 'UTM medium', 'UTM campaign', 'UTM term', 'UTM content', 'Source', 'Page URL', 'Referrer', 'Test?', 'Notes'];
 var DATE_COLUMNS = { created_at: 1, updated_at: 1, paid_at: 1, phone_verified_at: 1 };
