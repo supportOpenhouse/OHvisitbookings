@@ -5,3 +5,4 @@ Drop the three home-tour videos and their poster images here (referenced by inde
   umang-winter-hills-3bhk.mp4  umang-winter-hills-3bhk.jpg
 
 Keep each mp4 under ~8 MB (H.264, 720p, muted) so the page stays fast. Until a file is present, its card is hidden automatically.
+The .jpg posters were generated from a frame of each video (shown before the video starts); regenerate them if you replace a video.
