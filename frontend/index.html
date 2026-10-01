@@ -111,7 +111,7 @@ header{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid 
 .step .when{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--o)}
 .step h3{margin:2px 0 3px}
 .step p{font-size:14px}
-@media(min-width:900px){.steps{grid-template-columns:repeat(var(--cols),1fr);gap:18px}.step{grid-template-columns:1fr;padding:0}.step::before{left:44px;right:-18px;top:21px;bottom:auto;width:auto;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 10px)}}
+@media(min-width:900px){.steps{grid-template-columns:repeat(var(--cols),1fr);gap:18px}.step{grid-template-columns:1fr;padding:0;align-items:start;align-content:start}.step::before{left:44px;right:-18px;top:21px;bottom:auto;width:auto;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 10px)}}
 
 /* get grid */
 .get{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
@@ -274,8 +274,8 @@ footer p{color:rgba(255,255,255,.55);font-size:12px;margin-top:8px}
 .rv .snd[aria-pressed="true"] .w1,.rv .snd[aria-pressed="true"] .w2{display:block}
 .rv .snd[aria-pressed="true"] .mute{display:none}
 .rv figcaption{padding:8px 2px 0}.rv figcaption b{display:block;font-size:14px}.rv figcaption span{font-size:12px;color:var(--mut)}
-.rv.more{display:flex}
-.rv.more>div{width:100%;aspect-ratio:9/16;border-radius:16px;background:linear-gradient(160deg,var(--n),var(--nd));color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:18px;gap:6px}
+.rv.more{display:block;align-self:flex-start}
+.rv.more>div{width:100%;aspect-ratio:9/16;box-sizing:border-box;border-radius:16px;background:linear-gradient(160deg,var(--n),var(--nd));color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:18px;gap:6px}
 .rv.more .fh{font-size:44px;font-weight:700;color:#fff;line-height:1}
 .rv.more b{font-family:var(--fh);font-size:18px}
 .rv.more p{color:rgba(255,255,255,.75);font-size:13px;margin-bottom:10px}
@@ -424,7 +424,7 @@ src="https://www.facebook.com/tr?id=1437792258100227&ev=PageView&noscript=1"
   <span class="eyebrow">How it works</span>
   <h2>How your 30 days work</h2>
   <div class="steps" style="--cols:4"><div class="step pay"><div class="num">1</div><div><span class="when">Today</span><h3>Pay ₹990</h3><p>Pick city, size and budget. Takes 60 seconds.</p></div></div><div class="step"><div class="num">2</div><div><span class="when">Within 24 hours</span><h3>Advisor assigned</h3><p>Your dedicated advisor for the next 30 days.</p></div></div><div class="step"><div class="num">3</div><div><span class="when">Weeks 1 to 3</span><h3>Visits, travel as per your timings</h3><p>See homes matched to your budget and size.</p></div></div><div class="step"><div class="num">4</div><div><span class="when">Week 4</span><h3>Agreement & registry</h3><p>Handled by our team when you buy.</p></div></div></div>
-  <div style="margin-top:26px;max-width:420px"><button class="btn btn-o" data-open="steps">Get my home advisor →</button></div>
+  <div style="margin:30px auto 0;max-width:420px"><button class="btn btn-o" data-open="steps">Get my home advisor →</button></div>
 </div></section>
 
 <!-- 5 WHAT YOU GET -->
@@ -443,8 +443,8 @@ src="https://www.facebook.com/tr?id=1437792258100227&ev=PageView&noscript=1"
     <div class="feat"><span class="e">📄</span><div><b>Legally verified</b><span>Every home checked before you visit</span></div></div>
   </div>
   <div class="gal"><figure class="rv"><video src="/videos/tulip-orange-3bhk.mp4" poster="/videos/tulip-orange-3bhk.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Sound on" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="w1" d="M16 9.5a3.5 3.5 0 010 5"/><path class="w2" d="M18.5 7a7 7 0 010 10"/><path class="mute" d="M16 9l5 5M21 9l-5 5"/></svg></button><figcaption><b>Tulip Orange</b><span>3 BHK · staged by Openhouse</span></figcaption></figure><figure class="rv"><video src="/videos/m3m-the-marina-2bhk.mp4" poster="/videos/m3m-the-marina-2bhk.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Sound on" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="w1" d="M16 9.5a3.5 3.5 0 010 5"/><path class="w2" d="M18.5 7a7 7 0 010 10"/><path class="mute" d="M16 9l5 5M21 9l-5 5"/></svg></button><figcaption><b>M3M The Marina</b><span>2 BHK · staged by Openhouse</span></figcaption></figure><figure class="rv"><video src="/videos/umang-winter-hills-3bhk.mp4" poster="/videos/umang-winter-hills-3bhk.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Sound on" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="w1" d="M16 9.5a3.5 3.5 0 010 5"/><path class="w2" d="M18.5 7a7 7 0 010 10"/><path class="mute" d="M16 9l5 5M21 9l-5 5"/></svg></button><figcaption><b>Umang Winter Hills</b><span>3 BHK · staged by Openhouse</span></figcaption></figure><figure class="rv more"><div><span class="fh">260+</span><b>More units</b><p>Ready to move homes across Gurgaon, Noida and Ghaziabad</p><button class="btn btn-o btn-sm" data-open="more-units">Get my home advisor</button></div></figure></div>
-  <p class="cap">Swipe to see more · tap the speaker for sound</p>
-  <div style="margin-top:16px;max-width:420px"><button class="btn btn-o" data-open="homes">Get my home advisor →</button></div>
+  <p class="cap" style="text-align:center">Swipe to see more · tap the speaker for sound</p>
+  <div style="margin:20px auto 0;max-width:420px"><button class="btn btn-o" data-open="homes">Get my home advisor →</button></div>
 </div></section>
 
 <!-- 8 SAVINGS -->
