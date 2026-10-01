@@ -359,6 +359,14 @@ footer p{color:rgba(255,255,255,.55);font-size:12px;margin-top:8px}
 <meta property="og:image" content="https://bookvisit.openhouse.in/assets/hero-1.jpg">
 <meta property="og:url" content="https://bookvisit.openhouse.in/">
 <meta property="og:type" content="website">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSECKLXR74"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CSECKLXR74');
+</script>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -653,7 +661,7 @@ async function confirmPayment(resp){
   while(true){
     try{
       const r=await api('/api/payments/verify',{order_id:resp.razorpay_order_id,payment_id:resp.razorpay_payment_id,signature:resp.razorpay_signature});
-      if(r.ok){track('payment_confirmed');if(window.gtag)gtag('event','purchase',{value:990,currency:'INR',transaction_id:resp.razorpay_payment_id});window.onbeforeunload=null;location.href=CONFIG.thankYouUrl;return}
+      if(r.ok){track('payment_confirmed');window.onbeforeunload=null;location.href=CONFIG.thankYouUrl;return}  // GA4 purchase fires on /thank-you with the payment id
       if(r.status>=500&&attempt<2){attempt++;await new Promise(res=>setTimeout(res,1500));continue}
       overlay(false);$('pay').disabled=false;$('pay').textContent='Pay ₹990 · Get my home advisor';showErr(r.data.error||'We could not confirm the payment. If money was deducted, our team will confirm it shortly.');return
     }catch{

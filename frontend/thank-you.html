@@ -39,6 +39,14 @@
 .help a span{display:block;font-weight:400;font-size:13px;color:var(--muted);margin-top:2px}
 .refund{margin-top:28px;font-size:14px;color:var(--muted);max-width:60ch}
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSECKLXR74"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CSECKLXR74');
+</script>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -130,11 +138,13 @@ src="https://www.facebook.com/tr?id=2250898612016600&ev=PageView&noscript=1"
 <script>fbq('track', 'Purchase', {value: 990, currency: 'INR'});</script>
 <script>
 (async () => {
+  let txn = null;
   try {
     const r = await fetch('/api/bookings/me', { credentials: 'same-origin' });
     if (!r.ok) return;
     const { booking: b } = await r.json();
     if (!b) return;
+    txn = b.payment_id || b.ref;
     if (b.first_name) document.getElementById('title').textContent = b.first_name + ', your home advisor is on the way.';
     if (b.status !== 'paid') document.getElementById('lede').textContent = 'We have your details. Our team will contact you within 24 hours.';
     const rows = [['Name', b.name], ['WhatsApp number', b.phone_masked], ['City', b.city], ['Home', b.configuration], ['Budget', b.budget], ['Areas', /^Anywhere/.test(b.areas || '') ? '' : b.areas], ['Moving in', b.visit_when], ['Paid', b.status === 'paid' ? b.amount : 'Pending']];
@@ -142,6 +152,12 @@ src="https://www.facebook.com/tr?id=2250898612016600&ev=PageView&noscript=1"
     document.getElementById('ref').textContent = 'Ref ' + b.ref;
     document.getElementById('summary').hidden = false;
   } catch {}
+  finally {
+    // GA4 purchase, fired once per visit with the Razorpay payment id as transaction_id (lets GA de-duplicate reloads).
+    const ev = { value: 990, currency: 'INR', items: [{ item_name: '990 Home Advisor', price: 990, quantity: 1 }] };
+    if (txn) ev.transaction_id = txn;
+    if (window.gtag) gtag('event', 'purchase', ev);
+  }
 })();
 </script>
 </body>
